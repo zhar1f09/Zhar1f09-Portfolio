@@ -132,68 +132,71 @@
       </div>
     </section>
 
-    <section id="services" style="margin-top:22px">
-      <h3>Services</h3>
-      <div class="tabs">
-        <button class="tab-btn active" data-key="modeling">Modeling</button>
-        <button class="tab-btn" data-key="building">Building</button>
-        <button class="tab-btn" data-key="clothing">Clothing</button>
-        <button class="tab-btn" data-key="server">Server Design</button>
-        <button class="tab-btn" data-key="management">Management</button>
-        <button class="tab-btn" data-key="growth">Growth</button>
+<section id="services" style="margin-top:22px">
+  <h3>Services</h3>
+  <div class="tabs">
+    <button class="tab-btn active" data-key="modeling">Modeling</button>
+    <button class="tab-btn" data-key="building">Building</button>
+    <button class="tab-btn" data-key="clothing">Clothing</button>
+    <button class="tab-btn" data-key="server">Server Design</button>
+    <button class="tab-btn" data-key="wip">W.I.P</button>
+  </div>
+
+  <div id="portfolio" class="panel">
+    <!-- Modeling gallery -->
+    <div class="gallery" data-key="modeling">
+      <div class="grid">
+        <div class="thumb" data-src="Images/Golden Sword.png"><img src="Images/Golden Sword.png" alt="Model 1"><div class="label">Model 1</div></div>
+        <div class="thumb" data-src="Images/Van.png"><img src="Images/Van.png" alt="Model 2"><div class="label">Model 2</div></div>
+        <div class="thumb" data-src="Images/Rainbow Knife.png"><img src="Images/Rainbow Knife.png" alt="Model 3"><div class="label">Model 3</div></div>
       </div>
+    </div>
 
-      <div id="portfolio" class="panel">
-        <!-- Modeling gallery -->
-        <div class="gallery" data-key="Modeling">
-          <div class="grid">
-            <div class="thumb" data-src="Images/Golden Sword.png"><img src="Images/Golden Sword.png" alt="Model 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 1</div></div>
-            <div class="thumb" data-src="Images/Van.png"><img src="Images/Van.png" alt="Model 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 2</div></div>
-            <div class="thumb" data-src="Images/Rainbow Knife.png"><img src="Images/Rainbow Knife.png" alt="Model 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 3</div></div>
-          </div>
-        </div>
-        <!-- Building gallery -->
-        <div class="gallery" data-key="Building" style="display:none">
-          <div class="grid">
-            <div class="thumb" data-src="Images/HDB Filler Block.png"><img src="Images/HDB Filler Block.png" alt="Structure 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Structure 1</div></div>
-            <div class="thumb" data-src="Images/Fantasy House.png"><img src="Images/Fantasy House.png" alt="Structure 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Structure 2</div></div>
-            <div class="thumb" data-src="Images/Concert Stadium.png"><img src="Images/Concert Stadium.png" alt="Structure 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Structure 3</div></div>
-          </div>
-        </div>
-        <!-- Clothing gallery -->
-        <div class="gallery" data-key="Clothing Designs" style="display:none">
-          <div class="grid">
-            <div class="thumb" data-src="[ImageURL7]"><img src="[ImageURL7]" alt="Clothing Design 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Clothing Design 1</div></div>
-            <div class="thumb" data-src="[ImageURL8]"><img src="[ImageURL8]" alt="Clothing Design 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Clothing Design 2</div></div>
-            <div class="thumb" data-src="[ImageURL9]"><img src="[ImageURL9]" alt="Clothing Design 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Clothing Design 3</div></div>
-          </div>
-        </div>
-        <!-- Server gallery -->
-        <div class="gallery" data-key="Server Designs" style="display:none">
-          <div class="grid">
-            <div class="thumb" data-src="[ImageURL10]"><img src="[ImageURL10]" alt="Server Design 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Server Design 1</div></div>
-            <div class="thumb" data-src="[ImageURL11]"><img src="[ImageURL11]" alt="Server Design 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Server Design 2</div></div>
-            <div class="thumb" data-src="[ImageURL12]"><img src="[ImageURL12]" alt="Server Design 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Server Design 3</div></div>
-          </div>
-        </div>
-        <!-- Management gallery -->
-        <div class="gallery" data-key="W.I.P" style="display:none">
-          <div class="grid">
-            <div class="thumb" data-src="[ImageURL13]"><img src="[ImageURL13]" alt="Campaign 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Campaign 1</div></div>
-            <div class="thumb" data-src="[ImageURL14]"><img src="[ImageURL14]" alt="Event 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Event 1</div></div>
-            <div class="thumb" data-src="[ImageURL15]"><img src="[ImageURL15]" alt="Report 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Report 1</div></div>
-          </div>
-        </div>
-
-      <!-- LIGHTBOX -->
-      <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
-        <div class="lb-inner">
-          <img id="lb-img" class="lb-img" src="" alt="" />
-          <div id="lb-close" class="lb-close">×</div>
-        </div>
+    <!-- Building gallery -->
+    <div class="gallery" data-key="building" style="display:none">
+      <div class="grid">
+        <div class="thumb" data-src="Images/HDB Filler Block.png"><img src="Images/HDB Filler Block.png" alt="Structure 1"><div class="label">Structure 1</div></div>
+        <div class="thumb" data-src="Images/Fantasy House.png"><img src="Images/Fantasy House.png" alt="Structure 2"><div class="label">Structure 2</div></div>
+        <div class="thumb" data-src="Images/Concert Stadium.png"><img src="Images/Concert Stadium.png" alt="Structure 3"><div class="label">Structure 3</div></div>
       </div>
+    </div>
 
-    </section>
+    <!-- Clothing gallery -->
+    <div class="gallery" data-key="clothing" style="display:none">
+      <div class="grid">
+        <div class="thumb" data-src="Images/Shirt1.png"><img src="Images/Shirt1.png" alt="Clothing Design 1"><div class="label">Clothing Design 1</div></div>
+        <div class="thumb" data-src="Images/Pants1.png"><img src="Images/Pants1.png" alt="Clothing Design 2"><div class="label">Clothing Design 2</div></div>
+        <div class="thumb" data-src="Images/Shirt2.png"><img src="Images/Shirt2.png" alt="Clothing Design 3"><div class="label">Clothing Design 3</div></div>
+      </div>
+    </div>
+
+    <!-- Server gallery -->
+    <div class="gallery" data-key="server" style="display:none">
+      <div class="grid">
+        <div class="thumb" data-src="Images/DiscordSetup.png"><img src="Images/DiscordSetup.png" alt="Server Design 1"><div class="label">Server Design 1</div></div>
+        <div class="thumb" data-src="Images/ServerPanel.png"><img src="Images/ServerPanel.png" alt="Server Design 2"><div class="label">Server Design 2</div></div>
+        <div class="thumb" data-src="Images/ServerDashboard.png"><img src="Images/ServerDashboard.png" alt="Server Design 3"><div class="label">Server Design 3</div></div>
+      </div>
+    </div>
+
+    <!-- W.I.P gallery -->
+    <div class="gallery" data-key="wip" style="display:none">
+      <div class="grid">
+        <div class="thumb" data-src="Images/WIP1.png"><img src="Images/WIP1.png" alt="Campaign 1"><div class="label">Campaign 1</div></div>
+        <div class="thumb" data-src="Images/WIP2.png"><img src="Images/WIP2.png" alt="Event 1"><div class="label">Event 1</div></div>
+        <div class="thumb" data-src="Images/WIP3.png"><img src="Images/WIP3.png" alt="Report 1"><div class="label">Report 1</div></div>
+      </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
+      <div class="lb-inner">
+        <img id="lb-img" class="lb-img" src="" alt="" />
+        <div id="lb-close" class="lb-close">×</div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <section id="contact" style="margin-top:22px">
       <h3>Contact</h3>
