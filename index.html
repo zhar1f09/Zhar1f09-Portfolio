@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zhar1f09 | Experienced Roblox Developer</title>
+  <meta name="description" content="Zhar1f09 — Modeling, Building, Clothing Design, Server Design, and Management for Roblox." />
+  <link rel="icon" href="https://tr.rbxcdn.com/6b2a1a5b4a2b4c9a8e1a/images/385.png" />
+  <style>
+    :root{
+      --bg:#000000;
+      --card:#0f0f0f;
+      --muted:#9aa0a6;
+      --accent:#ff3b3b;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6e6e6;background:linear-gradient(180deg,#000 10%,#070707 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#bb1f1f);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .title{line-height:1}
+    .title h1{margin:0;font-size:20px}
+    .title p{margin:0;color:var(--muted);font-size:13px}
+    nav{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#111;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
+    .hero h2{font-size:34px;margin:0}
+    .hero p{color:var(--muted);margin-top:12px;margin-bottom:20px}
+    .cta-row{display:flex;gap:12px}
+
+    /* Cards */
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+    .card h3{margin:0 0 8px 0}
+    .card p{margin:0;color:var(--muted);font-size:13px}
+
+    /* Stats */
+    .stats{display:flex;gap:18px;margin-top:28px}
+    .stat{flex:1;background:var(--glass);padding:18px;border-radius:12px;text-align:center}
+    .stat .num{font-size:28px;font-weight:700;color:var(--accent)}
+    .stat p{margin:6px 0 0 0;color:var(--muted)}
+
+    /* Portfolio gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+    .thumb{background:#121212;height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+
+    /* Contact */
+    .contact{display:flex;gap:12px;align-items:center;margin-top:26px}
+
+    footer{margin-top:40px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .cards{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:540px){
+      .cards{grid-template-columns:1fr}
+      .gallery{grid-template-columns:1fr}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div class="title">
+          <h1>Zhar1f09</h1>
+          <p>Experienced Roblox Developer</p>
+        </div>
+      </div>
+      <nav>
+        <a class="ghost" href="#about">About</a>
+        <a class="ghost" href="#services">Services</a>
+        <a class="ghost" href="#portfolio">Portfolio</a>
+        <a class="btn" id="joinServerBtn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & Message</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Building, Designing & Managing <span style="color:var(--accent)">Roblox Experiences</span></h2>
+        <p>Low‑poly assets, clean maps, clothing, and server solutions with hands‑on project management. Join my server to start a commission — I do not accept friend requests from randoms.</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Hire Me</a>
+          <a class="ghost" href="#portfolio">View Portfolio</a>
+        </div>
+
+        <div class="stats" aria-hidden="true">
+          <div class="stat">
+            <div class="num" data-target="48">0</div>
+            <p>Projects Completed</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="32">0</div>
+            <p>Satisfied Clients</p>
+          </div>
+          <div class="stat">
+            <div class="num" data-target="12">0</div>
+            <p>Active Commissions</p>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card">
+        <h3>Quick Offer</h3>
+        <p>Management, Modeling, Building, Clothing Design & Server Design — beginner/affordable rates available. Join the server to DM me and start.</p>
+        <div style="margin-top:14px;display:flex;gap:8px">
+          <a class="btn" href="#contact">Start Project</a>
+          <a class="ghost" href="https://discord.gg/gxQWfjhfVY" target="_blank">Open Server</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="about" class="cards">
+      <div class="card">
+        <h3>About</h3>
+        <p>Since 2025, I specialize in optimized low‑poly modeling, efficient map building, clothing design, server setups and project management for Roblox creators.</p>
+      </div>
+      <div class="card">
+        <h3>Skills</h3>
+        <p>Modeling • Building • Clothing Design • Server Design • Management</p>
+      </div>
+      <div class="card">
+        <h3>Why Hire Me</h3>
+        <p>Clear communication, flexible pricing (flat or % with upfront), and revisions included. Join the server to discuss your project.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h3 style="margin-top:28px">Services</h3>
+      <div class="cards" style="margin-top:12px">
+        <div class="card"><h3>Modeling</h3><p>Low‑poly props, accessories, and assets optimized for performance.</p></div>
+        <div class="card"><h3>Building</h3><p>Structures, small maps, and environment design suited for Roblox.</p></div>
+        <div class="card"><h3>Clothing</h3><p>Shirts, pants, and outfits — ready for upload.</p></div>
+      </div>
+      <div class="cards" style="margin-top:12px">
+        <div class="card"><h3>Server Design</h3><p>Discord setup, roles, bots and ticket systems.</p></div>
+        <div class="card"><h3>Management</h3><p>Project & team management, event scheduling, and monetization advice.</p></div>
+        <div class="card"><h3>Growth</h3><p>Community growth, events, partnerships, and promotions.</p></div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h3 style="margin-top:28px">Portfolio</h3>
+      <div class="gallery">
+        <div class="thumb">Portfolio image 1</div>
+        <div class="thumb">Portfolio image 2</div>
+        <div class="thumb">Portfolio image 3</div>
+        <div class="thumb">Portfolio image 4</div>
+        <div class="thumb">Portfolio image 5</div>
+        <div class="thumb">Portfolio image 6</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3 style="margin-top:28px">Contact</h3>
+      <p>To contact me, please <strong>join the Discord server</strong> and send me a DM from there — I don't accept random friend requests.</p>
+      <div class="contact">
+        <a class="btn" id="joinBtn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & DM</a>
+        <a class="ghost" href="#">Commission Guide (Coming)</a>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Zhar1f09 | Experienced Roblox Developer
+    </footer>
+  </div>
+
+  <script>
+    // Animated counters
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const counters = document.querySelectorAll('.num');
+      counters.forEach(counter => {
+        const update = () => {
+          const target = +counter.getAttribute('data-target');
+          const current = +counter.innerText;
+          const increment = Math.ceil(target / 100);
+          if(current < target){
+            counter.innerText = current + increment;
+            setTimeout(update, 20);
+          } else {
+            counter.innerText = target;
+          }
+        }
+        update();
+      });
+
+      // quick join button behavior
+      const joinBtn = document.getElementById('joinServerBtn');
+      if(joinBtn){
+        joinBtn.addEventListener('click', ()=>{
+          // opens server — user will DM from there
+        })
+      }
+    });
+  </script>
+</body>
+</html>
