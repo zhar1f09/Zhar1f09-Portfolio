@@ -6,7 +6,6 @@
   <title>Zhar1f09 | Experienced Roblox Developer</title>
   <meta name="description" content="Roblox development services by Zhar1f09" />
   <link rel="icon" href="Images/Zhar1f09 Profile.png" />
-  
   <style>
     :root {
       --bg: #000000;
@@ -27,8 +26,31 @@
       background: var(--bg);
       -webkit-font-smoothing: antialiased;
     }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px }
+    .brand { display: flex; align-items: center; gap: 14px }
+    .logo { width: 56px; height: 56px; border-radius: 10px; background: linear-gradient(135deg,var(--accent),#bb1f1f); display: flex; align-items: center; justify-content: center; font-weight: 700 }
+    .brand h1 { margin: 0; font-size: 18px }
+    .brand p { margin: 0; color: var(--muted); font-size: 12px }
+    nav { display: flex; gap: 10px }
+    a.btn {
+      background: var(--accent);
+      color: #0f0f0f;
+      padding: 9px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform var(--transition);
+    }
+    a.btn:hover { transform: translateY(-3px) }
+    a.link {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
+    }
 
-        .hero {
+    .hero {
       display: grid;
       grid-template-columns: 1fr 380px;
       gap: 28px;
@@ -72,7 +94,7 @@
       box-shadow: 0 6px 20px rgba(255,59,59,0.04);
     }
 
-        .panel { margin-top: 14px }
+    .panel { margin-top: 14px }
     .grid {
       display: grid;
       grid-template-columns: repeat(3,1fr);
@@ -181,9 +203,7 @@
 
         <header>
       <div class="brand">
-        <div class="logo">
-          <img src="Images/Zhar1f09 Profile.png" alt="Zhar1f09" class="logo-img">
-        </div>
+        <div class="logo">Z</div>
         <div>
           <h1>Zhar1f09</h1>
           <p class="muted">Experienced Roblox Developer</p>
@@ -197,7 +217,7 @@
       </nav>
     </header>
 
-        <section class="hero">
+    <section class="hero">
       <div>
         <h2>Zhar1f09 Portfolio</h2>
         <p class="muted">Low‑poly asset, buildings, clothing, and server solutions with experienced staff management. Join my server to start a commission.</p>
@@ -216,7 +236,7 @@
       </aside>
     </section>
 
-        <section id="about" style="margin-top:20px">
+    <section id="about" style="margin-top:20px">
       <div class="cards">
         <div class="card">
           <h3>About</h3>
@@ -233,7 +253,7 @@
       </div>
     </section>
 
-        <section id="services" style="margin-top:22px">
+    <section id="services" style="margin-top:22px">
       <h3>Services</h3>
       <div class="tabs">
         <button class="tab-btn active" data-key="modeling">Modeling</button>
@@ -242,7 +262,9 @@
         <button class="tab-btn" data-key="server">Server Design</button>
         <button class="tab-btn" data-key="wip">W.I.P</button>
       </div>
-            <div id="portfolio" class="panel">
+
+      <div id="portfolio" class="panel">
+        <!-- Modeling gallery -->
         <div class="gallery" data-key="modeling">
           <div class="grid">
             <div class="thumb" data-src="Images/Golden Sword.png"><img src="Images/Golden Sword.png" alt="Model 1"><div class="label">Model 1</div></div>
@@ -251,6 +273,7 @@
           </div>
         </div>
 
+        <!-- Building gallery -->
         <div class="gallery" data-key="building" style="display:none">
           <div class="grid">
             <div class="thumb" data-src="Images/HDB Filler Block.png"><img src="Images/HDB Filler Block.png" alt="Structure 1"><div class="label">Structure 1</div></div>
@@ -258,7 +281,9 @@
             <div class="thumb" data-src="Images/Concert Stadium.png"><img src="Images/Concert Stadium.png" alt="Structure 3"><div class="label">Structure 3</div></div>
           </div>
         </div>
-                <div class="gallery" data-key="clothing" style="display:none">
+
+        <!-- Clothing gallery -->
+        <div class="gallery" data-key="clothing" style="display:none">
           <div class="grid">
             <div class="thumb" data-src="Images/Shizuku Jersey 2D.png"><img src="Images/Shizuku Jersey 2D.png" alt="Clothing Design 1"><div class="label">Clothing Design 1</div></div>
             <div class="thumb" data-src="Images/Shizuku jersey Black 2D.png"><img src="Images/Shizuku jersey Black 2D.png" alt="Clothing Design 2"><div class="label">Clothing Design 2</div></div>
@@ -266,6 +291,7 @@
           </div>
         </div>
 
+        <!-- Server gallery -->
         <div class="gallery" data-key="server" style="display:none">
           <div class="grid">
             <div class="thumb" data-src="Images/Discord Tech Server.png"><img src="Images/Discord Tech Server.png" alt="Server Design 1"><div class="label">Server Design 1</div></div>
@@ -274,6 +300,7 @@
           </div>
         </div>
 
+        <!-- W.I.P gallery -->
         <div class="gallery" data-key="wip" style="display:none">
           <div class="grid">
             <div class="thumb" data-src="Images/WIP1.png"><img src="Images/WIP1.png" alt="Campaign 1"><div class="label">Campaign 1</div></div>
@@ -282,7 +309,8 @@
           </div>
         </div>
 
-                      <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
+        <!-- Lightbox -->
+        <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
           <div class="lb-inner">
             <img id="lb-img" class="lb-img" src="" alt="" />
             <div id="lb-close" class="lb-close">×</div>
@@ -290,6 +318,7 @@
         </div>
       </div>
     </section>
+
         <section id="contact" style="margin-top:22px">
       <h3>Contact</h3>
       <p class="muted">To contact me, please <strong>join the Discord server</strong> and send me a DM from there — I don't accept friend requests from randoms.</p>
@@ -297,12 +326,15 @@
         <a class="btn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & DM</a>
       </div>
     </section>
-        <footer>
+
+    <footer>
       © 2025 Zhar1f09 | Experienced Roblox Developer
     </footer>
   </div>
-    <script>
+
+  <script>
     (function(){
+      // Tab switching
       const tabs = document.querySelectorAll('.tab-btn');
       const galleries = document.querySelectorAll('.gallery');
       tabs.forEach(t => {
@@ -316,6 +348,7 @@
         });
       });
 
+      // Lightbox
       const lightbox = document.getElementById('lightbox');
       const lbImg = document.getElementById('lb-img');
       const lbClose = document.getElementById('lb-close');
@@ -344,7 +377,26 @@
           lbImg.src = '';
         }
       });
+
+      // Animated counters (if numeric values filled into data-target attributes earlier)
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const val = el.getAttribute('data-target');
+        if (/^[0-9]+$/.test(val)) {
+          let current = 0;
+          const target = +val;
+          const step = Math.max(1, Math.floor(target / 80));
+          const timer = setInterval(() => {
+            current += step;
+            el.innerText = current;
+            if (current >= target) {
+              el.innerText = target;
+              clearInterval(timer);
+            }
+          }, 12);
+        }
+      });
     })();
   </script>
 </body>
+</html>
 </html>
