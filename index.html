@@ -3,205 +3,263 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zhar1f09 | Experienced Roblox Developer</title>
-  <meta name="description" content="Zhar1f09 — Modeling, Building, Clothing Design, Server Design, and Management for Roblox." />
-  <link rel="icon" href="https://tr.rbxcdn.com/6b2a1a5b4a2b4c9a8e1a/images/385.png" />
+  <title>[Purpose] - Zhar1f09 | Experienced Roblox Developer</title>
+  <meta name="description" content="[Purpose]" />
+  <link rel="icon" href="[Your Favicon URL or remove]" />
   <style>
     :root{
       --bg:#000000;
-      --card:#0f0f0f;
+      --panel:#0f0f0f;
       --muted:#9aa0a6;
       --accent:#ff3b3b;
+      --accent-2:#ff6b6b;
       --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1100px;
+      --transition:220ms cubic-bezier(.2,.9,.2,1);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6e6e6;background:linear-gradient(180deg,#000 10%,#070707 100%);-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6e6e6;background:var(--bg);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:0 auto;padding:32px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
     .brand{display:flex;align-items:center;gap:14px}
     .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#bb1f1f);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .title{line-height:1}
-    .title h1{margin:0;font-size:20px}
-    .title p{margin:0;color:var(--muted);font-size:13px}
-    nav{display:flex;gap:12px}
-    .btn{background:var(--accent);color:#111;padding:8px 12px;border-radius:8px;text-decoration:none;font-weight:600}
-    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none}
+    .brand h1{margin:0;font-size:18px}
+    .brand p{margin:0;color:var(--muted);font-size:12px}
+    nav{display:flex;gap:10px}
+    a.btn{background:var(--accent);color:#0f0f0f;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700;transition:transform var(--transition)}
+    a.btn:hover{transform:translateY(-3px)}
+    a.link{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
 
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:40px 0}
-    .hero h2{font-size:34px;margin:0}
-    .hero p{color:var(--muted);margin-top:12px;margin-bottom:20px}
-    .cta-row{display:flex;gap:12px}
+    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:40px 0}
+    .hero h2{font-size:32px;margin:0}
+    .hero p{color:var(--muted);margin-top:12px;margin-bottom:18px;line-height:1.5}
+    .cta{display:flex;gap:10px}
 
-    /* Cards */
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
-    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.6);}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+    .card{background:var(--panel);padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
     .card h3{margin:0 0 8px 0}
     .card p{margin:0;color:var(--muted);font-size:13px}
 
-    /* Stats */
-    .stats{display:flex;gap:18px;margin-top:28px}
-    .stat{flex:1;background:var(--glass);padding:18px;border-radius:12px;text-align:center}
-    .stat .num{font-size:28px;font-weight:700;color:var(--accent)}
-    .stat p{margin:6px 0 0 0;color:var(--muted)}
+    /* tabs */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+    .tab-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer;transition:all var(--transition);}
+    .tab-btn:hover{transform:translateY(-2px)}
+    .tab-btn.active{border-color:var(--accent);background:linear-gradient(90deg, rgba(255,59,59,0.08), rgba(255,91,91,0.03));color:#fff;box-shadow:0 6px 20px rgba(255,59,59,0.04)}
 
-    /* Portfolio gallery */
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
-    .thumb{background:#121212;height:120px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px}
+    .panel{margin-top:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{background:#121212;border-radius:10px;height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);position:relative;overflow:hidden;cursor:pointer}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 260ms}
+    .thumb:hover img{transform:scale(1.03)}
+    .label{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,0.5);padding:6px 8px;border-radius:6px;font-size:12px;color:#fff}
 
-    /* Contact */
-    .contact{display:flex;gap:12px;align-items:center;margin-top:26px}
+    /* lightbox */
+    .lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
+    .lb-overlay.show{display:flex}
+    .lb-inner{max-width:1100px;width:100%;max-height:90vh;position:relative}
+    .lb-img{width:100%;height:100%;object-fit:contain;border-radius:8px}
+    .lb-close{position:absolute;right:-6px;top:-6px;background:rgba(0,0,0,0.6);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;cursor:pointer}
 
-    footer{margin-top:40px;padding:18px 0;border-top:1px solid rgba(255,255,255,0.03);color:var(--muted);text-align:center}
+    .contact{display:flex;gap:12px;align-items:center;margin-top:22px}
+    footer{text-align:center;color:var(--muted);margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03)}
 
-    /* Responsive */
-    @media (max-width:920px){
+    @media (max-width:980px){
       .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
       .cards{grid-template-columns:repeat(2,1fr)}
-      .gallery{grid-template-columns:repeat(2,1fr)}
     }
-    @media (max-width:540px){
-      .cards{grid-template-columns:1fr}
-      .gallery{grid-template-columns:1fr}
-      nav{display:none}
+    @media (max-width:600px){
+      .grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      nav{width:100%;display:flex;justify-content:flex-end}
     }
+
+    .muted{color:var(--muted)}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="wrap">
     <header>
       <div class="brand">
         <div class="logo">Z</div>
-        <div class="title">
+        <div>
           <h1>Zhar1f09</h1>
-          <p>Experienced Roblox Developer</p>
+          <p class="muted">Experienced Roblox Developer</p>
         </div>
       </div>
       <nav>
-        <a class="ghost" href="#about">About</a>
-        <a class="ghost" href="#services">Services</a>
-        <a class="ghost" href="#portfolio">Portfolio</a>
-        <a class="btn" id="joinServerBtn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & Message</a>
+        <a class="link" href="#about">About</a>
+        <a class="link" href="#services">Services</a>
+        <a class="link" href="#portfolio">Portfolio</a>
+        <a class="btn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & DM</a>
       </nav>
     </header>
 
     <section class="hero">
       <div>
-        <h2>Building, Designing & Managing <span style="color:var(--accent)">Roblox Experiences</span></h2>
-        <p>Low‑poly assets, clean maps, clothing, and server solutions with hands‑on project management. Join my server to start a commission — I do not accept friend requests from randoms.</p>
-        <div class="cta-row">
+        <h2>Zhar1f09 Portfolio</h2>
+        <p class="muted">Low‑poly asset, buildings, clothing, and server solutions with experienced staff management. Join my server to start a commission.</p>
+        <div class="cta">
           <a class="btn" href="#contact">Hire Me</a>
-          <a class="ghost" href="#portfolio">View Portfolio</a>
-        </div>
-
-        <div class="stats" aria-hidden="true">
-          <div class="stat">
-            <div class="num" data-target="48">0</div>
-            <p>Projects Completed</p>
-          </div>
-          <div class="stat">
-            <div class="num" data-target="32">0</div>
-            <p>Satisfied Clients</p>
-          </div>
-          <div class="stat">
-            <div class="num" data-target="12">0</div>
-            <p>Active Commissions</p>
-          </div>
+          <a class="link" href="#portfolio">View Portfolio</a>
         </div>
       </div>
-
-      <aside class="card">
-        <h3>Quick Offer</h3>
-        <p>Management, Modeling, Building, Clothing Design & Server Design — beginner/affordable rates available. Join the server to DM me and start.</p>
-        <div style="margin-top:14px;display:flex;gap:8px">
+      <aside style="background:var(--panel);padding:18px;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,0.6)">
+        <h3 style="margin-top:0">Quick Offer</h3>
+        <p class="muted">Management, Modeling, Building, Clothing Design & Server Design. Beginner/affordable rates available.</p>
+        <div style="display:flex;gap:8px;margin-top:12px">
           <a class="btn" href="#contact">Start Project</a>
-          <a class="ghost" href="https://discord.gg/gxQWfjhfVY" target="_blank">Open Server</a>
+          <a class="link" href="https://discord.gg/gxQWfjhfVY" target="_blank">Open Server</a>
         </div>
       </aside>
     </section>
 
-    <section id="about" class="cards">
-      <div class="card">
-        <h3>About</h3>
-        <p>Since 2025, I specialize in optimized low‑poly modeling, efficient map building, clothing design, server setups and project management for Roblox creators.</p>
-      </div>
-      <div class="card">
-        <h3>Skills</h3>
-        <p>Modeling • Building • Clothing Design • Server Design • Management</p>
-      </div>
-      <div class="card">
-        <h3>Why Hire Me</h3>
-        <p>Clear communication, flexible pricing (flat or % with upfront), and revisions included. Join the server to discuss your project.</p>
-      </div>
-    </section>
-
-    <section id="services">
-      <h3 style="margin-top:28px">Services</h3>
-      <div class="cards" style="margin-top:12px">
-        <div class="card"><h3>Modeling</h3><p>Low‑poly props, accessories, and assets optimized for performance.</p></div>
-        <div class="card"><h3>Building</h3><p>Structures, small maps, and environment design suited for Roblox.</p></div>
-        <div class="card"><h3>Clothing</h3><p>Shirts, pants, and outfits — ready for upload.</p></div>
-      </div>
-      <div class="cards" style="margin-top:12px">
-        <div class="card"><h3>Server Design</h3><p>Discord setup, roles, bots and ticket systems.</p></div>
-        <div class="card"><h3>Management</h3><p>Project & team management, event scheduling, and monetization advice.</p></div>
-        <div class="card"><h3>Growth</h3><p>Community growth, events, partnerships, and promotions.</p></div>
+    <section id="about" style="margin-top:20px">
+      <div class="cards">
+        <div class="card">
+          <h3>About</h3>
+          <p class="muted">I’m Zhar1f09, a passionate Roblox developer specializing in the skills listed below. I also offer staff management services and take pride in delivering high-quality results tailored to each client’s request.</p>
+        </div>
+        <div class="card">
+          <h3>Skills</h3>
+          <p class="muted">Modeling • Building • Clothing Design • Server Design • Management • Growth</p>
+        </div>
+        <div class="card">
+          <h3>Why Hire Me</h3>
+          <p class="muted">Clear communication, flexible pricing (flat or % with upfront), revisions included. Join the server to discuss your project.</p>
+        </div>
       </div>
     </section>
 
-    <section id="portfolio">
-      <h3 style="margin-top:28px">Portfolio</h3>
-      <div class="gallery">
-        <div class="thumb">Portfolio image 1</div>
-        <div class="thumb">Portfolio image 2</div>
-        <div class="thumb">Portfolio image 3</div>
-        <div class="thumb">Portfolio image 4</div>
-        <div class="thumb">Portfolio image 5</div>
-        <div class="thumb">Portfolio image 6</div>
+    <section id="services" style="margin-top:22px">
+      <h3>Services</h3>
+      <div class="tabs">
+        <button class="tab-btn active" data-key="modeling">Modeling</button>
+        <button class="tab-btn" data-key="building">Building</button>
+        <button class="tab-btn" data-key="clothing">Clothing</button>
+        <button class="tab-btn" data-key="server">Server Design</button>
+        <button class="tab-btn" data-key="management">Management</button>
+        <button class="tab-btn" data-key="growth">Growth</button>
       </div>
+
+      <div id="portfolio" class="panel">
+        <!-- Modeling gallery -->
+        <div class="gallery" data-key="modeling">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL1]"><img src="[ImageURL1]" alt="Model 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 1</div></div>
+            <div class="thumb" data-src="[ImageURL2]"><img src="[ImageURL2]" alt="Model 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 2</div></div>
+            <div class="thumb" data-src="[ImageURL3]"><img src="[ImageURL3]" alt="Model 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Model 3</div></div>
+          </div>
+        </div>
+        <!-- Building gallery -->
+        <div class="gallery" data-key="building" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL4]"><img src="[ImageURL4]" alt="Map 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Map 1</div></div>
+            <div class="thumb" data-src="[ImageURL5]"><img src="[ImageURL5]" alt="Map 2" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Map 2</div></div>
+            <div class="thumb" data-src="[ImageURL6]"><img src="[ImageURL6]" alt="Map 3" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Map 3</div></div>
+          </div>
+        </div>
+        <!-- Clothing gallery -->
+        <div class="gallery" data-key="clothing" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL7]"><img src="[ImageURL7]" alt="Shirt 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Shirt 1</div></div>
+            <div class="thumb" data-src="[ImageURL8]"><img src="[ImageURL8]" alt="Pants 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Pants 1</div></div>
+            <div class="thumb" data-src="[ImageURL9]"><img src="[ImageURL9]" alt="Outfit 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Outfit 1</div></div>
+          </div>
+        </div>
+        <!-- Server gallery -->
+        <div class="gallery" data-key="server" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL10]"><img src="[ImageURL10]" alt="Server UI" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Server UI</div></div>
+            <div class="thumb" data-src="[ImageURL11]"><img src="[ImageURL11]" alt="Ticket System" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Ticket System</div></div>
+            <div class="thumb" data-src="[ImageURL12]"><img src="[ImageURL12]" alt="Roles Layout" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Roles Layout</div></div>
+          </div>
+        </div>
+        <!-- Management gallery -->
+        <div class="gallery" data-key="management" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL13]"><img src="[ImageURL13]" alt="Campaign 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Campaign 1</div></div>
+            <div class="thumb" data-src="[ImageURL14]"><img src="[ImageURL14]" alt="Event 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Event 1</div></div>
+            <div class="thumb" data-src="[ImageURL15]"><img src="[ImageURL15]" alt="Report 1" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Report 1</div></div>
+          </div>
+        </div>
+        <!-- Growth gallery -->
+        <div class="gallery" data-key="growth" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="[ImageURL16]"><img src="[ImageURL16]" alt="Giveaway" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Giveaway</div></div>
+            <div class="thumb" data-src="[ImageURL17]"><img src="[ImageURL17]" alt="Collab" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Collab</div></div>
+            <div class="thumb" data-src="[ImageURL18]"><img src="[ImageURL18]" alt="Ad Asset" onerror="this.style.opacity=.08;this.style.background='#111'"><div class="label">Ad Asset</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIGHTBOX -->
+      <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
+        <div class="lb-inner">
+          <img id="lb-img" class="lb-img" src="" alt="" />
+          <div id="lb-close" class="lb-close">×</div>
+        </div>
+      </div>
+
     </section>
 
-    <section id="contact">
-      <h3 style="margin-top:28px">Contact</h3>
-      <p>To contact me, please <strong>join the Discord server</strong> and send me a DM from there — I don't accept random friend requests.</p>
+    <section id="contact" style="margin-top:22px">
+      <h3>Contact</h3>
+      <p class="muted">To contact me, please <strong>join the Discord server</strong> and send me a DM from there — I don't accept friend requests from randoms.</p>
       <div class="contact">
-        <a class="btn" id="joinBtn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server & DM</a>
-        <a class="ghost" href="#">Commission Guide (Coming)</a>
+        <a class="btn" href="[Discord Invite URL]" target="_blank">Join Server & DM</a>
+        <a class="link" href="mailto:[YourEmail]?subject=Commission%20Inquiry">Email (optional)</a>
       </div>
     </section>
 
     <footer>
       © 2025 Zhar1f09 | Experienced Roblox Developer
     </footer>
+
   </div>
 
   <script>
-    // Animated counters
-    document.addEventListener('DOMContentLoaded', ()=>{
-      const counters = document.querySelectorAll('.num');
-      counters.forEach(counter => {
-        const update = () => {
-          const target = +counter.getAttribute('data-target');
-          const current = +counter.innerText;
-          const increment = Math.ceil(target / 100);
-          if(current < target){
-            counter.innerText = current + increment;
-            setTimeout(update, 20);
-          } else {
-            counter.innerText = target;
-          }
-        }
-        update();
+    (function(){
+      // Tab switching
+      const tabs = document.querySelectorAll('.tab-btn');
+      const galleries = document.querySelectorAll('.gallery');
+      tabs.forEach(t=>{
+        t.addEventListener('click', ()=>{
+          tabs.forEach(x=>x.classList.remove('active'));
+          t.classList.add('active');
+          const key = t.getAttribute('data-key');
+          galleries.forEach(g=>{ g.style.display = g.getAttribute('data-key') === key ? 'block' : 'none'; });
+        })
       });
 
-      // quick join button behavior
-      const joinBtn = document.getElementById('joinServerBtn');
-      if(joinBtn){
-        joinBtn.addEventListener('click', ()=>{
-          // opens server — user will DM from there
+      // Lightbox
+      const lightbox = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const lbClose = document.getElementById('lb-close');
+
+      document.querySelectorAll('.thumb').forEach(thumb=>{
+        thumb.addEventListener('click', ()=>{
+          const src = thumb.getAttribute('data-src') || (thumb.querySelector('img') && thumb.querySelector('img').src);
+          if(!src) return;
+          lbImg.src = src; lbImg.alt = thumb.querySelector('.label') ? thumb.querySelector('.label').innerText : '';
+          lightbox.classList.add('show'); lightbox.setAttribute('aria-hidden','false');
         })
-      }
-    });
+      });
+
+      lbClose.addEventListener('click', ()=>{ lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden','true'); lbImg.src=''; });
+      lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) { lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden','true'); lbImg.src=''; } });
+
+      // animated counters (if numeric values filled into data-target attributes earlier)
+      document.querySelectorAll('[data-target]').forEach(el=>{
+        const val = el.getAttribute('data-target');
+        if(/^[0-9]+$/.test(val)){
+          let current=0; const target=+val; const step=Math.max(1,Math.floor(target/80));
+          const timer=setInterval(()=>{ current+=step; el.innerText=current; if(current>=target){ el.innerText=target; clearInterval(timer); } },12);
+        }
+      });
+
+    })();
   </script>
 </body>
 </html>
