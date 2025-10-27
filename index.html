@@ -4,83 +4,204 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zhar1f09 | Experienced Roblox Developer</title>
-  <meta name="description" content="[Purpose]" />
+  <meta name="description" content="Roblox development services by Zhar1f09" />
   <link rel="icon" href="Images/Zhar1f09 Profile.png" />
   <style>
-    :root{
-      --bg:#000000;
-      --panel:#0f0f0f;
-      --muted:#9aa0a6;
-      --accent:#ff3b3b;
-      --accent-2:#ff6b6b;
+    :root {
+      --bg: #000000;
+      --panel: #0f0f0f;
+      --muted: #9aa0a6;
+      --accent: #ff3b3b;
+      --accent-2: #ff6b6b;
       --glass: rgba(255,255,255,0.03);
-      --radius:12px;
-      --maxw:1100px;
-      --transition:220ms cubic-bezier(.2,.9,.2,1);
+      --radius: 12px;
+      --maxw: 1100px;
+      --transition: 220ms cubic-bezier(.2,.9,.2,1);
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6e6e6;background:var(--bg);-webkit-font-smoothing:antialiased}
-    .wrap{max-width:var(--maxw);margin:0 auto;padding:32px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#bb1f1f);display:flex;align-items:center;justify-content:center;font-weight:700}
-    .brand h1{margin:0;font-size:18px}
-    .brand p{margin:0;color:var(--muted);font-size:12px}
-    nav{display:flex;gap:10px}
-    a.btn{background:var(--accent);color:#0f0f0f;padding:9px 14px;border-radius:10px;text-decoration:none;font-weight:700;transition:transform var(--transition)}
-    a.btn:hover{transform:translateY(-3px)}
-    a.link{color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
-
-    .hero{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center;padding:40px 0}
-    .hero h2{font-size:32px;margin:0}
-    .hero p{color:var(--muted);margin-top:12px;margin-bottom:18px;line-height:1.5}
-    .cta{display:flex;gap:10px}
-
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
-    .card{background:var(--panel);padding:18px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(0,0,0,0.5)}
-    .card h3{margin:0 0 8px 0}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-
-    /* tabs */
-    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
-    .tab-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px 14px;border-radius:10px;color:var(--muted);cursor:pointer;transition:all var(--transition);}
-    .tab-btn:hover{transform:translateY(-2px)}
-    .tab-btn.active{border-color:var(--accent);background:linear-gradient(90deg, rgba(255,59,59,0.08), rgba(255,91,91,0.03));color:#fff;box-shadow:0 6px 20px rgba(255,59,59,0.04)}
-
-    .panel{margin-top:14px}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .thumb{background:#121212;border-radius:10px;height:140px;display:flex;align-items:center;justify-content:center;color:var(--muted);position:relative;overflow:hidden;cursor:pointer}
-    .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 260ms}
-    .thumb:hover img{transform:scale(1.03)}
-    .label{position:absolute;left:8px;bottom:8px;background:rgba(0,0,0,0.5);padding:6px 8px;border-radius:6px;font-size:12px;color:#fff}
-
-    /* lightbox */
-    .lb-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;z-index:9999;padding:20px}
-    .lb-overlay.show{display:flex}
-    .lb-inner{max-width:1100px;width:100%;max-height:90vh;position:relative}
-    .lb-img{width:100%;height:100%;object-fit:contain;border-radius:8px}
-    .lb-close{position:absolute;right:-6px;top:-6px;background:rgba(0,0,0,0.6);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;cursor:pointer}
-
-    .contact{display:flex;gap:12px;align-items:center;margin-top:22px}
-    footer{text-align:center;color:var(--muted);margin-top:36px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.03)}
-
-    @media (max-width:980px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:repeat(2,1fr)}
-      .cards{grid-template-columns:repeat(2,1fr)}
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #e6e6e6;
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
     }
-    @media (max-width:600px){
-      .grid{grid-template-columns:1fr}
-      header{flex-direction:column;align-items:flex-start;gap:12px}
-      nav{width:100%;display:flex;justify-content:flex-end}
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 32px }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 18px }
+    .brand { display: flex; align-items: center; gap: 14px }
+    .logo { width: 56px; height: 56px; border-radius: 10px; background: linear-gradient(135deg,var(--accent),#bb1f1f); display: flex; align-items: center; justify-content: center; font-weight: 700 }
+    .brand h1 { margin: 0; font-size: 18px }
+    .brand p { margin: 0; color: var(--muted); font-size: 12px }
+    nav { display: flex; gap: 10px }
+    a.btn {
+      background: var(--accent);
+      color: #0f0f0f;
+      padding: 9px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform var(--transition);
+    }
+    a.btn:hover { transform: translateY(-3px) }
+    a.link {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 8px;
     }
 
-    .muted{color:var(--muted)}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+      align-items: center;
+      padding: 40px 0;
+    }
+    .hero h2 { font-size: 32px; margin: 0 }
+    .hero p { color: var(--muted); margin-top: 12px; margin-bottom: 18px; line-height: 1.5 }
+    .cta { display: flex; gap: 10px }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .card {
+      background: var(--panel);
+      padding: 18px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+    .card h3 { margin: 0 0 8px 0 }
+    .card p { margin: 0; color: var(--muted); font-size: 13px }
+
+    .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px }
+    .tab-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 10px 14px;
+      border-radius: 10px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .tab-btn:hover { transform: translateY(-2px) }
+    .tab-btn.active {
+      border-color: var(--accent);
+      background: linear-gradient(90deg, rgba(255,59,59,0.08), rgba(255,91,91,0.03));
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(255,59,59,0.04);
+    }
+
+    .panel { margin-top: 14px }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 12px;
+    }
+    .thumb {
+      background: #121212;
+      border-radius: 10px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 260ms;
+    }
+    .thumb:hover img { transform: scale(1.03) }
+    .label {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      background: rgba(0,0,0,0.5);
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      color: #fff;
+    }
+
+    .lb-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+    .lb-overlay.show { display: flex }
+    .lb-inner {
+      max-width: 1100px;
+      width: 100%;
+      max-height: 90vh;
+      position: relative;
+    }
+    .lb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    .lb-close {
+      position: absolute;
+      right: -6px;
+      top: -6px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .contact {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-top: 22px;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      margin-top: 36px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.03);
+    }
+
+    @media (max-width:980px) {
+      .hero { grid-template-columns: 1fr }
+      .grid { grid-template-columns: repeat(2,1fr) }
+      .cards { grid-template-columns: repeat(2,1fr) }
+    }
+    @media (max-width:600px) {
+      .grid { grid-template-columns: 1fr }
+      header { flex-direction: column; align-items: flex-start; gap: 12px }
+      nav { width: 100%; display: flex; justify-content: flex-end }
+    }
+
+    .muted { color: var(--muted) }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
+
+        <header>
       <div class="brand">
         <div class="logo">Z</div>
         <div>
@@ -132,73 +253,73 @@
       </div>
     </section>
 
-<section id="services" style="margin-top:22px">
-  <h3>Services</h3>
-  <div class="tabs">
-    <button class="tab-btn active" data-key="modeling">Modeling</button>
-    <button class="tab-btn" data-key="building">Building</button>
-    <button class="tab-btn" data-key="clothing">Clothing</button>
-    <button class="tab-btn" data-key="server">Server Design</button>
-    <button class="tab-btn" data-key="wip">W.I.P</button>
-  </div>
-
-  <div id="portfolio" class="panel">
-    <!-- Modeling gallery -->
-    <div class="gallery" data-key="modeling">
-      <div class="grid">
-        <div class="thumb" data-src="Images/Golden Sword.png"><img src="Images/Golden Sword.png" alt="Model 1"><div class="label">Model 1</div></div>
-        <div class="thumb" data-src="Images/Van.png"><img src="Images/Van.png" alt="Model 2"><div class="label">Model 2</div></div>
-        <div class="thumb" data-src="Images/Rainbow Knife.png"><img src="Images/Rainbow Knife.png" alt="Model 3"><div class="label">Model 3</div></div>
+    <section id="services" style="margin-top:22px">
+      <h3>Services</h3>
+      <div class="tabs">
+        <button class="tab-btn active" data-key="modeling">Modeling</button>
+        <button class="tab-btn" data-key="building">Building</button>
+        <button class="tab-btn" data-key="clothing">Clothing</button>
+        <button class="tab-btn" data-key="server">Server Design</button>
+        <button class="tab-btn" data-key="wip">W.I.P</button>
       </div>
-    </div>
 
-    <!-- Building gallery -->
-    <div class="gallery" data-key="building" style="display:none">
-      <div class="grid">
-        <div class="thumb" data-src="Images/HDB Filler Block.png"><img src="Images/HDB Filler Block.png" alt="Structure 1"><div class="label">Structure 1</div></div>
-        <div class="thumb" data-src="Images/Fantasy House.png"><img src="Images/Fantasy House.png" alt="Structure 2"><div class="label">Structure 2</div></div>
-        <div class="thumb" data-src="Images/Concert Stadium.png"><img src="Images/Concert Stadium.png" alt="Structure 3"><div class="label">Structure 3</div></div>
+      <div id="portfolio" class="panel">
+        <!-- Modeling gallery -->
+        <div class="gallery" data-key="modeling">
+          <div class="grid">
+            <div class="thumb" data-src="Images/Golden Sword.png"><img src="Images/Golden Sword.png" alt="Model 1"><div class="label">Model 1</div></div>
+            <div class="thumb" data-src="Images/Van.png"><img src="Images/Van.png" alt="Model 2"><div class="label">Model 2</div></div>
+            <div class="thumb" data-src="Images/Rainbow Knife.png"><img src="Images/Rainbow Knife.png" alt="Model 3"><div class="label">Model 3</div></div>
+          </div>
+        </div>
+
+        <!-- Building gallery -->
+        <div class="gallery" data-key="building" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="Images/HDB Filler Block.png"><img src="Images/HDB Filler Block.png" alt="Structure 1"><div class="label">Structure 1</div></div>
+            <div class="thumb" data-src="Images/Fantasy House.png"><img src="Images/Fantasy House.png" alt="Structure 2"><div class="label">Structure 2</div></div>
+            <div class="thumb" data-src="Images/Concert Stadium.png"><img src="Images/Concert Stadium.png" alt="Structure 3"><div class="label">Structure 3</div></div>
+          </div>
+        </div>
+
+        <!-- Clothing gallery -->
+        <div class="gallery" data-key="clothing" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="Images/Shizuku Jersey 2D.png"><img src="Images/Shizuku Jersey 2D.png" alt="Clothing Design 1"><div class="label">Clothing Design 1</div></div>
+            <div class="thumb" data-src="Images/Shizuku jersey Black 2D.png"><img src="Images/Shizuku jersey Black 2D.png" alt="Clothing Design 2"><div class="label">Clothing Design 2</div></div>
+            <div class="thumb" data-src="Images/GB Jersey 2D.png"><img src="Images/GB Jersey 2D.png" alt="Clothing Design 3"><div class="label">Clothing Design 3</div></div>
+          </div>
+        </div>
+
+        <!-- Server gallery -->
+        <div class="gallery" data-key="server" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="Images/Discord Tech Server.png"><img src="Images/Discord Tech Server.png" alt="Server Design 1"><div class="label">Server Design 1</div></div>
+            <div class="thumb" data-src="Images/Community Shop Server.png"><img src="Images/Community Shop Server.png" alt="Server Design 2"><div class="label">Server Design 2</div></div>
+            <div class="thumb" data-src="Images/Tech Group.png"><img src="Images/Tech Group.png" alt="Server Design 3"><div class="label">Server Design 3</div></div>
+          </div>
+        </div>
+
+        <!-- W.I.P gallery -->
+        <div class="gallery" data-key="wip" style="display:none">
+          <div class="grid">
+            <div class="thumb" data-src="Images/WIP1.png"><img src="Images/WIP1.png" alt="Campaign 1"><div class="label">Campaign 1</div></div>
+            <div class="thumb" data-src="Images/WIP2.png"><img src="Images/WIP2.png" alt="Event 1"><div class="label">Event 1</div></div>
+            <div class="thumb" data-src="Images/WIP3.png"><img src="Images/WIP3.png" alt="Report 1"><div class="label">Report 1</div></div>
+          </div>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
+          <div class="lb-inner">
+            <img id="lb-img" class="lb-img" src="" alt="" />
+            <div id="lb-close" class="lb-close">×</div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Clothing gallery -->
-    <div class="gallery" data-key="clothing" style="display:none">
-      <div class="grid">
-        <div class="thumb" data-src="Images/Shizuku Jersey 2D.png"><img src="Images/Shizuku Jersey 2D.png" alt="Clothing Design 1"><div class="label">Clothing Design 1</div></div>
-        <div class="thumb" data-src="Images/Shizuku jersey Black 2D.png"><img src="Images/Shizuku jersey Black 2D.png" alt="Clothing Design 2"><div class="label">Clothing Design 2</div></div>
-        <div class="thumb" data-src="Images/GB Jersey 2D.png"><img src="Images/GB Jersey 2D.png" alt="Clothing Design 3"><div class="label">Clothing Design 3</div></div>
-      </div>
-    </div>
-
-    <!-- Server gallery -->
-    <div class="gallery" data-key="server" style="display:none">
-      <div class="grid">
-        <div class="thumb" data-src="Images/Discord Tech Server.png"><img src="Images/Discord Tech Server.png" alt="Server Design 1"><div class="label">Server Design 1</div></div>
-        <div class="thumb" data-src="Images/Community Shop Server.png"><img src="Images/Community Shop Server.png" alt="Server Design 2"><div class="label">Server Design 2</div></div>
-        <div class="thumb" data-src="Images/Tech Group.png"><img src="Images/Tech Group.png" alt="Server Design 3"><div class="label">Server Design 3</div></div>
-      </div>
-    </div>
-
-    <!-- W.I.P gallery -->
-    <div class="gallery" data-key="wip" style="display:none">
-      <div class="grid">
-        <div class="thumb" data-src="Images/WIP1.png"><img src="Images/WIP1.png" alt="Campaign 1"><div class="label">Campaign 1</div></div>
-        <div class="thumb" data-src="Images/WIP2.png"><img src="Images/WIP2.png" alt="Event 1"><div class="label">Event 1</div></div>
-        <div class="thumb" data-src="Images/WIP3.png"><img src="Images/WIP3.png" alt="Report 1"><div class="label">Report 1</div></div>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="lb-overlay" role="dialog" aria-hidden="true">
-      <div class="lb-inner">
-        <img id="lb-img" class="lb-img" src="" alt="" />
-        <div id="lb-close" class="lb-close">×</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-    <section id="contact" style="margin-top:22px">
+        <section id="contact" style="margin-top:22px">
       <h3>Contact</h3>
       <p class="muted">To contact me, please <strong>join the Discord server</strong> and send me a DM from there — I don't accept friend requests from randoms.</p>
       <div class="contact">
@@ -209,7 +330,6 @@
     <footer>
       © 2025 Zhar1f09 | Experienced Roblox Developer
     </footer>
-
   </div>
 
   <script>
@@ -217,13 +337,15 @@
       // Tab switching
       const tabs = document.querySelectorAll('.tab-btn');
       const galleries = document.querySelectorAll('.gallery');
-      tabs.forEach(t=>{
-        t.addEventListener('click', ()=>{
-          tabs.forEach(x=>x.classList.remove('active'));
+      tabs.forEach(t => {
+        t.addEventListener('click', () => {
+          tabs.forEach(x => x.classList.remove('active'));
           t.classList.add('active');
           const key = t.getAttribute('data-key');
-          galleries.forEach(g=>{ g.style.display = g.getAttribute('data-key') === key ? 'block' : 'none'; });
-        })
+          galleries.forEach(g => {
+            g.style.display = g.getAttribute('data-key') === key ? 'block' : 'none';
+          });
+        });
       });
 
       // Lightbox
@@ -231,29 +353,49 @@
       const lbImg = document.getElementById('lb-img');
       const lbClose = document.getElementById('lb-close');
 
-      document.querySelectorAll('.thumb').forEach(thumb=>{
-        thumb.addEventListener('click', ()=>{
+      document.querySelectorAll('.thumb').forEach(thumb => {
+        thumb.addEventListener('click', () => {
           const src = thumb.getAttribute('data-src') || (thumb.querySelector('img') && thumb.querySelector('img').src);
-          if(!src) return;
-          lbImg.src = src; lbImg.alt = thumb.querySelector('.label') ? thumb.querySelector('.label').innerText : '';
-          lightbox.classList.add('show'); lightbox.setAttribute('aria-hidden','false');
-        })
+          if (!src) return;
+          lbImg.src = src;
+          lbImg.alt = thumb.querySelector('.label') ? thumb.querySelector('.label').innerText : '';
+          lightbox.classList.add('show');
+          lightbox.setAttribute('aria-hidden', 'false');
+        });
       });
 
-      lbClose.addEventListener('click', ()=>{ lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden','true'); lbImg.src=''; });
-      lightbox.addEventListener('click', (e)=>{ if(e.target === lightbox) { lightbox.classList.remove('show'); lightbox.setAttribute('aria-hidden','true'); lbImg.src=''; } });
+      lbClose.addEventListener('click', () => {
+        lightbox.classList.remove('show');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lbImg.src = '';
+      });
 
-      // animated counters (if numeric values filled into data-target attributes earlier)
-      document.querySelectorAll('[data-target]').forEach(el=>{
-        const val = el.getAttribute('data-target');
-        if(/^[0-9]+$/.test(val)){
-          let current=0; const target=+val; const step=Math.max(1,Math.floor(target/80));
-          const timer=setInterval(()=>{ current+=step; el.innerText=current; if(current>=target){ el.innerText=target; clearInterval(timer); } },12);
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('show');
+          lightbox.setAttribute('aria-hidden', 'true');
+          lbImg.src = '';
         }
       });
 
+      // Animated counters (if numeric values filled into data-target attributes earlier)
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const val = el.getAttribute('data-target');
+        if (/^[0-9]+$/.test(val)) {
+          let current = 0;
+          const target = +val;
+          const step = Math.max(1, Math.floor(target / 80));
+          const timer = setInterval(() => {
+            current += step;
+            el.innerText = current;
+            if (current >= target) {
+              el.innerText = target;
+              clearInterval(timer);
+            }
+          }, 12);
+        }
+      });
     })();
   </script>
 </body>
-</html>
 </html>
