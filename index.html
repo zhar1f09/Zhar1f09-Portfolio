@@ -3,65 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zhar1f09 Portfolio</title>
+<title>Zhar1f09 | Roblox Developer</title>
 
 <style>
+:root {
+  --bg:#000;
+  --panel:#0f0f0f;
+  --muted:#9aa0a6;
+  --accent:#ff3b3b;
+}
 body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: system-ui;
+  margin:0;
+  font-family:system-ui;
+  background:var(--bg);
+  color:#fff;
 }
 .wrap {
-  max-width: 1100px;
-  margin: auto;
-  padding: 24px;
+  max-width:1100px;
+  margin:auto;
+  padding:32px;
 }
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+}
+a.btn {
+  background:var(--accent);
+  color:#000;
+  padding:10px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:700;
+}
+.section {
+  margin-bottom:48px;
+}
+.section h2 {
+  margin-bottom:10px;
+}
+.muted { color:var(--muted); }
+
+/* Tabs & Gallery */
 .tabs {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
 }
 .tab-btn {
-  padding: 10px 14px;
-  background: none;
-  border: 1px solid #333;
-  color: #aaa;
-  cursor: pointer;
+  padding:10px 14px;
+  background:none;
+  border:1px solid #333;
+  color:#aaa;
+  cursor:pointer;
 }
 .tab-btn.active {
-  border-color: #ff3b3b;
-  color: #fff;
+  border-color:var(--accent);
+  color:#fff;
 }
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 16px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+  margin-top:16px;
 }
 .thumb {
-  position: relative;
-  height: 150px;
-  background: #111;
-  overflow: hidden;
-  cursor: pointer;
+  position:relative;
+  height:160px;
+  background:#111;
+  overflow:hidden;
 }
 .thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity .4s;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:opacity .4s;
 }
 .label {
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background: rgba(0,0,0,.6);
-  padding: 5px 8px;
-  font-size: 12px;
+  position:absolute;
+  bottom:8px;
+  left:8px;
+  background:rgba(0,0,0,.6);
+  padding:6px 8px;
+  font-size:12px;
 }
-@media (max-width: 700px) {
-  .grid { grid-template-columns: 1fr; }
+@media(max-width:800px){
+  .grid{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -69,10 +97,56 @@ body {
 <body>
 <div class="wrap">
 
-<h2>Portfolio</h2>
+<header>
+  <div>
+    <h1>Zhar1f09</h1>
+    <p class="muted">Roblox Developer • Modeling • Building • Clothing</p>
+  </div>
+  <a class="btn" href="https://discord.gg/YOURSERVER" target="_blank">
+    Hire Me (Discord)
+  </a>
+</header>
 
-<div class="tabs" id="tabs"></div>
-<div id="gallery"></div>
+<!-- HERO -->
+<section class="section">
+  <h2>About Me</h2>
+  <p class="muted">
+    I’m Zhar1f09, a Roblox developer focused on modeling, building, clothing design,
+    and server setup. I provide affordable commissions, clear communication,
+    and revisions to ensure clients get exactly what they need.
+  </p>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <h2>Services</h2>
+  <ul class="muted">
+    <li>Low-poly & realistic modeling</li>
+    <li>Map & building design</li>
+    <li>Roblox clothing (shirts & pants)</li>
+    <li>Discord server setup & management</li>
+    <li>W.I.P skills (future services)</li>
+  </ul>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+  <h2>Portfolio</h2>
+  <div class="tabs" id="tabs"></div>
+  <div id="gallery"></div>
+</section>
+
+<!-- CONTACT -->
+<section class="section">
+  <h2>Commissions</h2>
+  <p class="muted">
+    I accept commissions through Discord only.
+    Join my server and DM me with your project details.
+  </p>
+  <a class="btn" href="https://discord.gg/YOURSERVER" target="_blank">
+    Join Discord & Commission
+  </a>
+</section>
 
 </div>
 
@@ -99,30 +173,29 @@ function renderCategory(category) {
     label.className = "label";
     label.textContent = item.title;
 
-    thumb.appendChild(img);
-    thumb.appendChild(label);
+    thumb.append(img,label);
     grid.appendChild(thumb);
 
     let i = 0;
-    setInterval(() => {
-      i = (i + 1) % item.images.length;
-      img.style.opacity = 0;
-      setTimeout(() => {
-        img.src = item.images[i];
-        img.style.opacity = 1;
-      }, 200);
-    }, 2500);
+    setInterval(()=>{
+      i=(i+1)%item.images.length;
+      img.style.opacity=0;
+      setTimeout(()=>{
+        img.src=item.images[i];
+        img.style.opacity=1;
+      },200);
+    },2500);
   });
 
   galleryEl.appendChild(grid);
 }
 
-Object.keys(categories).forEach((key, index) => {
-  const btn = document.createElement("button");
-  btn.className = "tab-btn" + (index === 0 ? " active" : "");
-  btn.textContent = key;
-  btn.onclick = () => {
-    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+Object.keys(categories).forEach((key,i)=>{
+  const btn=document.createElement("button");
+  btn.className="tab-btn"+(i===0?" active":"");
+  btn.textContent=key;
+  btn.onclick=()=>{
+    document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
     renderCategory(key);
   };
