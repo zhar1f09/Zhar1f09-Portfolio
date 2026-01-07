@@ -1,143 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zhar1f09 | Experienced Roblox Developer</title>
-<meta name="description" content="Roblox development services by Zhar1f09">
-<link rel="icon" href="Images/Zhar1f09 Profile.png">
+<title>Zhar1f09 Portfolio</title>
 
 <style>
-:root {
-  --bg:#000;
-  --panel:#0f0f0f;
-  --muted:#9aa0a6;
-  --accent:#ff3b3b;
-  --radius:12px;
-  --maxw:1100px;
-  --transition:220ms cubic-bezier(.2,.9,.2,1);
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: system-ui;
 }
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Inter,system-ui;
-  color:#e6e6e6;
-  background:var(--bg);
+.wrap {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
 }
-.wrap{max-width:var(--maxw);margin:auto;padding:32px}
-
-/* Header */
-header{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.brand{display:flex;gap:14px;align-items:center}
-.logo-img{width:56px;height:56px;border-radius:10px;object-fit:cover}
-nav{display:flex;gap:10px}
-a.btn{
-  background:var(--accent);
-  color:#000;
-  padding:9px 14px;
-  border-radius:10px;
-  font-weight:700;
-  text-decoration:none;
+.tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-a.link{color:var(--muted);text-decoration:none;padding:8px}
-
-/* Hero */
-.hero{
-  display:grid;
-  grid-template-columns:1fr 380px;
-  gap:28px;
-  padding:40px 0;
+.tab-btn {
+  padding: 10px 14px;
+  background: none;
+  border: 1px solid #333;
+  color: #aaa;
+  cursor: pointer;
 }
-.hero h2{font-size:32px;margin:0}
-.hero p{color:var(--muted);line-height:1.5}
-
-/* Cards */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
+.tab-btn.active {
+  border-color: #ff3b3b;
+  color: #fff;
 }
-.card{
-  background:var(--panel);
-  padding:18px;
-  border-radius:var(--radius);
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 16px;
 }
-
-/* Tabs */
-.tabs{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}
-.tab-btn{
-  border:1px solid rgba(255,255,255,0.05);
-  background:none;
-  padding:10px 14px;
-  border-radius:10px;
-  color:var(--muted);
-  cursor:pointer;
+.thumb {
+  position: relative;
+  height: 150px;
+  background: #111;
+  overflow: hidden;
+  cursor: pointer;
 }
-.tab-btn.active{
-  border-color:var(--accent);
-  color:#fff;
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity .4s;
 }
-
-/* Gallery */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:14px;
+.label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0,0,0,.6);
+  padding: 5px 8px;
+  font-size: 12px;
 }
-.thumb{
-  background:#121212;
-  border-radius:10px;
-  height:140px;
-  overflow:hidden;
-  cursor:pointer;
-  position:relative;
-}
-.thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:opacity .4s;
-}
-.label{
-  position:absolute;
-  left:8px;
-  bottom:8px;
-  background:rgba(0,0,0,.6);
-  padding:6px 8px;
-  font-size:12px;
-  border-radius:6px;
-}
-
-/* Lightbox */
-.lb-overlay{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:999;
-}
-.lb-overlay.show{display:flex}
-.lb-inner{max-width:90vw;max-height:90vh}
-.lb-img{max-width:100%;max-height:100%;border-radius:8px}
-.lb-close{
-  position:absolute;
-  top:20px;
-  right:20px;
-  font-size:28px;
-  cursor:pointer;
-}
-
-/* Responsive */
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr}
-  .grid,.cards{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:600px){
-  .grid,.cards{grid-template-columns:1fr}
-  header{flex-direction:column;align-items:flex-start}
+@media (max-width: 700px) {
+  .grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -145,115 +69,67 @@ a.link{color:var(--muted);text-decoration:none;padding:8px}
 <body>
 <div class="wrap">
 
-<header>
-  <div class="brand">
-    <img src="Images/Zhar1f09 Profile.png" class="logo-img" alt="Zhar1f09 logo">
-    <div>
-      <h1>Zhar1f09</h1>
-      <p class="muted">Experienced Roblox Developer</p>
-    </div>
-  </div>
-  <nav>
-    <a class="link" href="#about">About</a>
-    <a class="link" href="#services">Services</a>
-    <a class="link" href="#portfolio">Portfolio</a>
-    <a class="btn" href="https://discord.gg/gxQWfjhfVY" target="_blank">Join Server</a>
-  </nav>
-</header>
+<h2>Portfolio</h2>
 
-<section class="hero">
-  <div>
-    <h2>Zhar1f09 Portfolio</h2>
-    <p>Low-poly assets, buildings, clothing & server solutions.</p>
-  </div>
-</section>
-
-<section id="services">
-  <div class="tabs">
-    <button class="tab-btn active" data-key="modeling">Modeling</button>
-    <button class="tab-btn" data-key="building">Building</button>
-  </div>
-
-  <div id="portfolio">
-    <div class="gallery" data-key="modeling">
-      <div class="grid">
-
-        <!-- STACKED IMAGES -->
-        <div class="thumb" data-images="Images/Golden Sword.png,Images/Rainbow Knife.png,Images/Van.png">
-          <img loading="lazy" alt="Weapon models">
-          <div class="label">Weapons</div>
-        </div>
-
-        <div class="thumb" data-images="Images/Van.png,Images/Golden Sword.png">
-          <img loading="lazy" alt="Vehicle models">
-          <div class="label">Vehicles</div>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="gallery" data-key="building" style="display:none">
-      <div class="grid">
-        <div class="thumb" data-images="Images/Fantasy House.png,Images/Concert Stadium.png">
-          <img loading="lazy" alt="Buildings">
-          <div class="label">Buildings</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>© 2025 Zhar1f09</footer>
+<div class="tabs" id="tabs"></div>
+<div id="gallery"></div>
 
 </div>
 
-<!-- Lightbox -->
-<div class="lb-overlay" id="lightbox">
-  <span class="lb-close" id="lb-close">×</span>
-  <div class="lb-inner">
-    <img id="lb-img" class="lb-img">
-  </div>
-</div>
+<script src="imageCategories.js"></script>
 
 <script>
-/* Tabs */
-document.querySelectorAll('.tab-btn').forEach(btn=>{
-  btn.onclick=()=>{
-    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.gallery').forEach(g=>{
-      g.style.display=g.dataset.key===btn.dataset.key?'block':'none';
-    });
+const tabsEl = document.getElementById("tabs");
+const galleryEl = document.getElementById("gallery");
+
+function renderCategory(category) {
+  galleryEl.innerHTML = "";
+  const grid = document.createElement("div");
+  grid.className = "grid";
+
+  categories[category].forEach(item => {
+    const thumb = document.createElement("div");
+    thumb.className = "thumb";
+
+    const img = document.createElement("img");
+    img.src = item.images[0];
+    img.loading = "lazy";
+
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = item.title;
+
+    thumb.appendChild(img);
+    thumb.appendChild(label);
+    grid.appendChild(thumb);
+
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % item.images.length;
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = item.images[i];
+        img.style.opacity = 1;
+      }, 200);
+    }, 2500);
+  });
+
+  galleryEl.appendChild(grid);
+}
+
+Object.keys(categories).forEach((key, index) => {
+  const btn = document.createElement("button");
+  btn.className = "tab-btn" + (index === 0 ? " active" : "");
+  btn.textContent = key;
+  btn.onclick = () => {
+    document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    renderCategory(key);
   };
+  tabsEl.appendChild(btn);
 });
 
-/* Image Stack Slideshows */
-document.querySelectorAll('.thumb').forEach(thumb=>{
-  const imgs=thumb.dataset.images.split(',');
-  const imgEl=thumb.querySelector('img');
-  let i=0;
-  imgEl.src=imgs[0];
-
-  setInterval(()=>{
-    i=(i+1)%imgs.length;
-    imgEl.style.opacity=0;
-    setTimeout(()=>{
-      imgEl.src=imgs[i];
-      imgEl.style.opacity=1;
-    },200);
-  },2500);
-
-  thumb.onclick=()=>{
-    document.getElementById('lb-img').src=imgs[i];
-    document.getElementById('lightbox').classList.add('show');
-  };
-});
-
-/* Lightbox Close */
-document.getElementById('lb-close').onclick=()=>lightbox.classList.remove('show');
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape') lightbox.classList.remove('show');
-});
+renderCategory(Object.keys(categories)[0]);
 </script>
 
 </body>
