@@ -1,22 +1,23 @@
 const imageCategories = {
   modeling: [
-    "Images/Modeling/GoldenSword1.png",
-    "Images/Modeling/GoldenSword2.png",
-    "Images/Modeling/GoldenSword3.png",
-    "Images/Modeling/Van1.png",
-    "Images/Modeling/Van2.png"
+    "Images/Modeling/Hat.blend",
+    "Images/Modeling/Mini Van Campervan.blend",
+    "Images/Modeling/Low-Poly Blue Car.blend",
+    "Images/Modeling/Wooden Hammer.blend",
+    "Images/Modeling/knife 1.blend"
   ],
 
   building: [
-    "Images/Building/Stadium1.png",
-    "Images/Building/Stadium2.png",
-    "Images/Building/House1.png",
-    "Images/Building/House2.png"
+    "Images/Building/bunker.png",
+    "Images/Building/Concert Stadium.png",
+    "Images/Building/Fantasy House.png",
+    "Images/Building/HDB Filler Block.png"
   ],
 
   clothing: [
-    "Images/Clothing/Jersey1.png",
-    "Images/Clothing/Jersey2.png"
+    "Images/Clothing/GB Jersey 2D.png",
+    "Images/Clothing/Shizuku Jersey 2D.png",
+    "Images/Clothing/Shizuku Jersey Black 2D.png"
   ],
 
   server: [
