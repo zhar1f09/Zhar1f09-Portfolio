@@ -45,9 +45,9 @@ nav a:hover {color:var(--accent)}
 
 /* Sections: compact spacing */
 section {
-  padding:60px 24px;       /* tighter spacing */
+  padding:30px 20px;       /* tighter spacing */
   min-height:auto;         /* no forced full screen height */
-  scroll-margin-top:80px;  /* ensures anchor scroll stops below header */
+  scroll-margin-top:70px;  /* ensures anchor scroll stops below header */
 }
 
 h1,h2 {color:var(--accent)}
