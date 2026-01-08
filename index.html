@@ -1,61 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Zhar1f09 | Roblox Developer</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --panel:#111;
+  --muted:#a0a5ab;
+  --text:#fff;
+  --accent:#ff3b3b; /* used sparingly */
+  --border:#1e1e1e;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif;
+}
+.wrap{max-width:1100px;margin:auto;padding:24px}
+
+/* Header */
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand .avatar{
+  width:56px;height:56px;border-radius:10px;object-fit:cover;background:#222
+}
+.brand .name{margin:0;font-size:1.25rem;font-weight:700}
+.brand .role{margin:0;color:var(--muted);font-size:.9rem}
+
+.actions{position:relative}
+.btn{
+  background:var(--accent);color:#000;padding:10px 14px;border-radius:10px;
+  font-weight:700;text-decoration:none;border:none;cursor:pointer
+}
+.menu{
+  position:absolute;right:0;top:48px;background:var(--panel);border:1px solid var(--border);
+  border-radius:10px;min-width:220px;display:none;box-shadow:0 8px 24px rgba(0,0,0,.35)
+}
+.menu.show{display:block}
+.menu a{
+  display:block;padding:10px 12px;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border)
+}
+.menu a:last-child{border-bottom:none}
+.menu a:hover{background:#141414}
+
+/* Portfolio */
+section#portfolio{margin-top:16px}
+.tabs{
+  display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px
+}
+.tab-btn{
+  background:none;border:1px solid var(--border);color:var(--muted);
+  padding:8px 12px;border-radius:10px;cursor:pointer
+}
+.tab-btn.active{border-color:var(--accent);color:#fff}
+.tab-btn:hover{border-color:var(--accent);color:#fff}
+
+.grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:12px
+}
+.thumb{background:#121212;border-radius:10px;overflow:hidden;position:relative;height:150px;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.thumb:hover img{transform:scale(1.04)}
+.label{
+  position:absolute;left:8px;bottom:8px;padding:5px 8px;font-size:12px;border-radius:6px;
+  background:rgba(0,0,0,.6);color:#ddd
+}
+
+/* Lightbox */
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center}
+.lb.show{display:flex}
+.lb img{max-width:90%;max-height:90%}
+.lb .close{
+  position:absolute;top:20px;right:20px;background:#fff;color:#000;border-radius:50%;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold
+}
+
+/* Responsive */
+@media (max-width:760px){
+  .grid{grid-template-columns:1fr}
+  header{flex-direction:column;gap:12px;align-items:flex-start}
+  .actions{align-self:flex-start}
+}
+</style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- HERO -->
-<section class="hero">
-  <img src="Images/profile.png" alt="Profile Picture" class="profile-pic">
-  <h1>Zhar1f09</h1>
-  <p class="tagline">Roblox Developer | Modeling • Building • Clothing • Server Systems</p>
-  <a href="#contact" class="btn">Hire Me</a>
-</section>
+<header>
+  <div class="brand">
+    <!-- Avatar will be set via JS using your Discord -->
+    <img class="avatar" id="avatar" alt="Profile picture" />
+    <div>
+      <h1 class="name">Zhar1f09</h1>
+      <p class="role">Roblox Developer</p>
+    </div>
+  </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I’m a Roblox developer specializing in <strong>modeling, building, clothing design, and server systems</strong>.
-    With a focus on professional polish and user experience, I create scalable projects that bring ideas to life.
-  </p>
-  <ul class="skills">
-    <li>✔ Modeling & 3D Assets</li>
-    <li>✔ Building & Environment Design</li>
-    <li>✔ Clothing & Branding</li>
-    <li>✔ Server Systems & Scripting</li>
-  </ul>
-</section>
+  <div class="actions">
+    <button class="btn" id="hireBtn">Hire Me</button>
+    <div class="menu" id="hireMenu">
+      <!-- Replace placeholders with your actual IDs -->
+      <!-- Your Discord Profile -->
+      <a id="discordProfile" href="#" target="_blank">Discord Profile</a>
+      <!-- Your Discord Server Invite -->
+      <a id="discordServer" href="#" target="_blank">Join Discord Server</a>
+    </div>
+  </div>
+</header>
 
-<!-- PORTFOLIO -->
 <section id="portfolio">
-  <h2>Portfolio</h2>
   <div class="tabs" id="tabs"></div>
-  <div id="galleries"></div>
+  <div class="grid" id="grid"></div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Interested in working together? Reach out via:</p>
-  <ul class="contact-links">
-    <li><a href="mailto:your@email.com">📧 Email</a></li>
-    <li><a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a></li>
-    <li><a href="https://discord.gg/yourdiscord" target="_blank">💬 Discord</a></li>
-  </ul>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Zhar1f09 | Roblox Developer Portfolio</p>
-</footer>
-
-<!-- LIGHTBOX -->
+<!-- Lightbox -->
 <div class="lb" id="lb">
   <span class="close" id="lbclose">×</span>
   <img id="lbimg" alt="Preview">
@@ -65,72 +125,123 @@
 
 <script src="imageCategories.js"></script>
 <script>
-// Generate tabs and galleries
-const tabs = document.getElementById('tabs');
-const galleries = document.getElementById('galleries');
+// =========================
+// CONFIG: Set your Discord info here
+// =========================
+// Your Discord user ID (right click -> Copy ID in Developer Mode)
+const DISCORD_USER_ID = "YOUR_DISCORD_USER_ID";
+// Your server invite code (the part after discord.gg/)
+const DISCORD_INVITE_CODE = "YOUR_INVITE_CODE";
 
-Object.keys(portfolio).forEach((cat,i)=>{
-  const btn=document.createElement('button');
-  btn.className='tab-btn'+(i===0?' active':'');
-  btn.dataset.tab=cat;
-  btn.textContent=cat.charAt(0).toUpperCase()+cat.slice(1);
-  tabs.appendChild(btn);
+// Links for the Hire Me menu
+document.getElementById('discordProfile').href = `https://discord.com/users/${DISCORD_USER_ID}`;
+document.getElementById('discordServer').href = `https://discord.gg/${DISCORD_INVITE_CODE}`;
 
-  const gallery=document.createElement('div');
-  gallery.className='gallery';
-  gallery.dataset.tab=cat;
-  gallery.style.display=i===0?'block':'none';
+// -------------------------
+// Load avatar from Discord
+// Uses Lanyard public API to get avatar hash without tokens.
+// Fallback to default Discord avatar if any error.
+// -------------------------
+const avatarEl = document.getElementById('avatar');
 
-  const grid=document.createElement('div');
-  grid.className='grid';
+async function loadDiscordAvatar() {
+  try {
+    const res = await fetch(`https://api.lanyard.rest/v1/users/${DISCORD_USER_ID}`, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to fetch Lanyard");
+    const data = await res.json();
+    const user = data?.data?.discord_user;
+    if (user?.avatar) {
+      avatarEl.src = `https://cdn.discordapp.com/avatars/${DISCORD_USER_ID}/${user.avatar}.png?size=128`;
+    } else {
+      // Default avatar: index 0–4 based on discriminator; here we fallback to 0
+      avatarEl.src = `https://cdn.discordapp.com/embed/avatars/0.png`;
+    }
+  } catch (e) {
+    // Final fallback: local profile image if present
+    avatarEl.src = `Images/profile.png`;
+  }
+}
+loadDiscordAvatar();
 
-  portfolio[cat].forEach((file,j)=>{
-    const thumb=document.createElement('div');
-    thumb.className='thumb';
-    const img=document.createElement('img');
-    img.src=`Images/${cat}/${file}`;
-    img.alt=`${cat} ${j+1}`;
-    img.loading="lazy";
-    const label=document.createElement('div');
-    label.className='label';
-    label.textContent=`${cat.charAt(0).toUpperCase()+cat.slice(1)} ${j+1}`;
-    thumb.appendChild(img);
-    thumb.appendChild(label);
-    grid.appendChild(thumb);
-  });
-
-  gallery.appendChild(grid);
-  galleries.appendChild(gallery);
+// -------------------------
+// Hire Me menu toggle
+// -------------------------
+const hireBtn = document.getElementById('hireBtn');
+const hireMenu = document.getElementById('hireMenu');
+hireBtn.addEventListener('click', () => {
+  hireMenu.classList.toggle('show');
 });
-
-// Tab switching
-const tabBtns=document.querySelectorAll('.tab-btn');
-const galleryDivs=document.querySelectorAll('.gallery');
-tabBtns.forEach(t=>{
-  t.onclick=()=>{
-    tabBtns.forEach(b=>b.classList.remove('active'));
-    t.classList.add('active');
-    galleryDivs.forEach(g=>{
-      g.style.display=g.dataset.tab===t.dataset.tab?'block':'none';
-    });
-  };
-});
-
-// Lightbox
-const lb=document.getElementById('lb');
-const lbimg=document.getElementById('lbimg');
-const lbclose=document.getElementById('lbclose');
-
-document.addEventListener('click',e=>{
-  if(e.target.tagName==='IMG' && e.target.closest('.thumb')){
-    lbimg.src=e.target.src;
-    lb.classList.add('show');
+document.addEventListener('click', (e) => {
+  if (!hireBtn.contains(e.target) && !hireMenu.contains(e.target)) {
+    hireMenu.classList.remove('show');
   }
 });
-lbclose.onclick=()=>lb.classList.remove('show');
-lb.onclick=e=>{
-  if(e.target===lb) lb.classList.remove('show');
-};
+
+// -------------------------
+// Portfolio category tabs
+// -------------------------
+const tabsEl = document.getElementById('tabs');
+const gridEl = document.getElementById('grid');
+
+const categories = Object.keys(portfolio);
+
+// Create buttons in a row
+categories.forEach((cat, i) => {
+  const btn = document.createElement('button');
+  btn.className = `tab-btn${i === 0 ? ' active' : ''}`;
+  btn.dataset.tab = cat;
+  btn.textContent = cat.charAt(0).toUpperCase() + cat.slice(1);
+  tabsEl.appendChild(btn);
+});
+
+// Render first category (modeling) initially
+renderCategory(categories[0]);
+
+function renderCategory(cat) {
+  gridEl.innerHTML = '';
+  const files = portfolio[cat] || [];
+  files.slice(0, 3).forEach((file, idx) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'thumb';
+    const img = document.createElement('img');
+    img.src = `Images/${cat}/${file}`;
+    img.alt = `${cat} ${idx + 1}`;
+    img.loading = 'lazy';
+    const label = document.createElement('div');
+    label.className = 'label';
+    label.textContent = `${cat.charAt(0).toUpperCase() + cat.slice(1)} ${idx + 1}`;
+    wrap.appendChild(img);
+    wrap.appendChild(label);
+    gridEl.appendChild(wrap);
+  });
+}
+
+// Switch category on button click
+tabsEl.addEventListener('click', (e) => {
+  const btn = e.target.closest('.tab-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCategory(btn.dataset.tab);
+});
+
+// -------------------------
+// Lightbox for previews
+// -------------------------
+const lb = document.getElementById('lb');
+const lbimg = document.getElementById('lbimg');
+const lbclose = document.getElementById('lbclose');
+
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('.thumb img');
+  if (!img) return;
+  lbimg.src = img.src;
+  lb.classList.add('show');
+});
+lbclose.addEventListener('click', () => lb.classList.remove('show'));
+lb.addEventListener('click', (e) => {
+  if (e.target === lb) lb.classList.remove('show');
+});
 </script>
 </body>
 </html>
