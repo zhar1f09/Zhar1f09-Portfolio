@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Portfolio</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header>…same nav…</header>
+<div class="container">
+  <h2>Portfolio</h2>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+</div>
+<script src="imageCategories.js"></script>
+<script>
+const tabs=document.getElementById('tabs');
+const grid=document.getElementById('grid');
+const categories=Object.keys(portfolio);
+categories.forEach((cat,i)=>{
+  const b=document.createElement('button');
+  b.className='tab-btn'+(i===0?' active':'');
+  b.textContent=cat;
+  b.onclick=()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(cat)};
+  tabs.appendChild(b);
+});
+function render(cat){
+  grid.innerHTML='';
+  portfolio[cat].forEach((f,i)=>{
+    grid.innerHTML+=`<div class="thumb"><img src="Images/${cat}/${f}" alt="${cat} ${i+1}"><div class="label">${cat} ${i+1}</div></div>`;
+  });
+}
+render(categories[0]);
+</script>
+</body>
+</html>
