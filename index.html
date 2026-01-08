@@ -4,30 +4,58 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zhar1f09 | Roblox Developer</title>
-<link rel="stylesheet" href="style.css"> <!-- optional external CSS -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
 
-<header>
-  <div class="brand">
-    <img src="Images/profile.png" alt="Profile">
-    <div>
-      <h2 style="margin:0">Zhar1f09</h2>
-      <small class="muted">Roblox Developer</small>
-    </div>
-  </div>
-  <nav>
-    <a href="#portfolio">Portfolio</a>
-    <a class="btn" href="#">Hire Me</a>
-  </nav>
-</header>
+<!-- HERO -->
+<section class="hero">
+  <img src="Images/profile.png" alt="Profile Picture" class="profile-pic">
+  <h1>Zhar1f09</h1>
+  <p class="tagline">Roblox Developer | Modeling • Building • Clothing • Server Systems</p>
+  <a href="#contact" class="btn">Hire Me</a>
+</section>
 
-<h2 id="portfolio" style="margin-top:30px">Portfolio</h2>
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a Roblox developer specializing in <strong>modeling, building, clothing design, and server systems</strong>.
+    With a focus on professional polish and user experience, I create scalable projects that bring ideas to life.
+  </p>
+  <ul class="skills">
+    <li>✔ Modeling & 3D Assets</li>
+    <li>✔ Building & Environment Design</li>
+    <li>✔ Clothing & Branding</li>
+    <li>✔ Server Systems & Scripting</li>
+  </ul>
+</section>
 
-<div class="tabs" id="tabs"></div>
-<div id="galleries"></div>
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="tabs" id="tabs"></div>
+  <div id="galleries"></div>
+</section>
 
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Interested in working together? Reach out via:</p>
+  <ul class="contact-links">
+    <li><a href="mailto:your@email.com">📧 Email</a></li>
+    <li><a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a></li>
+    <li><a href="https://discord.gg/yourdiscord" target="_blank">💬 Discord</a></li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Zhar1f09 | Roblox Developer Portfolio</p>
+</footer>
+
+<!-- LIGHTBOX -->
 <div class="lb" id="lb">
   <span class="close" id="lbclose">×</span>
   <img id="lbimg" alt="Preview">
@@ -37,19 +65,17 @@
 
 <script src="imageCategories.js"></script>
 <script>
-// Generate tabs and galleries from portfolio object
+// Generate tabs and galleries
 const tabs = document.getElementById('tabs');
 const galleries = document.getElementById('galleries');
 
 Object.keys(portfolio).forEach((cat,i)=>{
-  // Tab button
   const btn=document.createElement('button');
   btn.className='tab-btn'+(i===0?' active':'');
   btn.dataset.tab=cat;
   btn.textContent=cat.charAt(0).toUpperCase()+cat.slice(1);
   tabs.appendChild(btn);
 
-  // Gallery
   const gallery=document.createElement('div');
   gallery.className='gallery';
   gallery.dataset.tab=cat;
