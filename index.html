@@ -6,39 +6,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+<header id="siteHeader">
   <div class="brand">
-    <img id="avatar" alt="Profile">
-    <h1>Zhar1f09</h1>
+    <img class="avatar" id="avatar" alt="Profile picture">
+    <p class="name">Zhar1f09</p>
   </div>
   <nav>
-    <a href="#about">About</a>
-    <a href="#prices">Prices</a>
+    <a href="about.html">About</a>
+    <a href="prices.html">Prices</a>
     <a href="#portfolio">Portfolio</a>
-    <a href="reviews.html">Reviews</a>
     <a href="#contact">Contact</a>
     <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
   </nav>
 </header>
-
-<section id="about">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>I specialize in modeling, building, clothing design, and server systems for Roblox. My focus is professional polish and scalable projects.</p>
-  </div>
-</section>
-
-<section id="prices">
-  <div class="container">
-    <h2>Prices</h2>
-    <ul>
-      <li>Modeling: from $10</li>
-      <li>Building: from $15</li>
-      <li>Clothing: from $5</li>
-      <li>Server Systems: from $20</li>
-    </ul>
-  </div>
-</section>
 
 <section id="portfolio">
   <div class="container">
@@ -51,22 +31,23 @@
 <section id="contact">
   <div class="container">
     <h2>Contact</h2>
-    <p>Discord: <a href="https://discord.com/users/103916006189352294" target="_blank">Zhar1f09</a></p>
-    <p>Server: <a href="https://discord.gg/Hghmu67jwU" target="_blank">Join Here</a></p>
+    <div class="contact-row">
+      <!-- Discord logo link -->
+      <a class="icon-link" href="https://discord.com/users/103916006189352294" target="_blank">
+        <img src="Images/discord-logo.png" alt="Discord" class="icon"> Discord
+      </a>
+      <!-- Create a Ticket button -->
+      <a class="ticket-btn" href="https://discord.gg/Hghmu67jwU" target="_blank">Create a Ticket</a>
+      <!-- Roblox logo link -->
+      <a class="icon-link" href="https://www.roblox.com/users/YOUR_ID/profile" target="_blank">
+        <img src="Images/roblox-logo.png" alt="Roblox" class="icon"> Roblox
+      </a>
+    </div>
   </div>
 </section>
 
-<div class="lb" id="lb">
-  <span class="close" id="lbclose">×</span>
-  <img id="lbimg" alt="Preview">
-</div>
-
 <script src="imageCategories.js"></script>
 <script>
-// Discord avatar fallback
-document.getElementById('avatar').src =
-  "https://cdn.discordapp.com/embed/avatars/0.png";
-
 // Portfolio tabs
 const tabs=document.getElementById('tabs');
 const grid=document.getElementById('grid');
@@ -85,15 +66,6 @@ function render(cat){
   });
 }
 render(categories[0]);
-
-// Lightbox
-const lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg');
-document.addEventListener('click',e=>{
-  const img=e.target.closest('.thumb img'); if(!img) return;
-  lbimg.src=img.src; lb.classList.add('show');
-});
-document.getElementById('lbclose').onclick=()=>lb.classList.remove('show');
-lb.onclick=e=>{if(e.target===lb) lb.classList.remove('show');};
 </script>
 </body>
 </html>
