@@ -6,96 +6,45 @@
   --panel:#111;
 }
 
-/* Header height is ~70px, so offset the body */
 body {
   margin:0;
   font-family:system-ui;
   background:var(--bg);
   color:var(--text);
   scroll-behavior:smooth;
-  padding-top:70px; /* <-- this ensures About Me is visible on load */
+  padding-top:70px; /* ensures About is visible under fixed header */
 }
 
-/* Header */
 header {
-  position:fixed;
-  top:0;left:0;right:0;
+  position:fixed;top:0;left:0;right:0;
   background:var(--panel);
   padding:10px 20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display:flex;justify-content:space-between;align-items:center;
   z-index:1000;
 }
-.brand {display:flex;align-items:center;gap:10px}
-.brand img {width:40px;height:40px;border-radius:8px;object-fit:cover}
-nav a {
-  color:var(--muted);
-  margin-left:12px;
-  text-decoration:none;
-  font-weight:500;
-  font-size:.9rem;
-}
+nav a {color:var(--muted);margin-left:12px;text-decoration:none;font-weight:500;font-size:.9rem}
 nav a:hover {color:var(--accent)}
-.btn {
-  background:var(--accent);
-  color:#000;
-  padding:6px 10px;
-  border-radius:6px;
-  font-weight:700;
-  text-decoration:none;
-  font-size:.9rem;
-}
+.btn {background:var(--accent);color:#000;padding:6px 10px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.9rem}
 
-/* Sections: ultra compact flow */
-section {
-  padding:30px 20px;
-  min-height:auto;
-  scroll-margin-top:70px; /* ensures anchor scroll stops below header */
-}
-
-/* Special fix for first section (About) */
-section:first-of-type {
-  padding-top:100px; /* offset header height so About Me is visible on load */
-}
-
-h1,h2 {
-  color:var(--accent);
-  margin:0 0 12px;
-}
+section {padding:30px 20px;min-height:auto;scroll-margin-top:80px}
 .container {max-width:1000px;margin:auto}
+h2 {color:var(--accent);margin:0 0 10px}
 
-/* Tabs + Portfolio */
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.tab-btn{
-  background:none;
-  border:1px solid #333;
-  color:var(--muted);
-  padding:6px 10px;
-  border-radius:8px;
-  cursor:pointer;
-  font-size:.85rem;
-}
+.tab-btn{background:none;border:1px solid #333;color:var(--muted);padding:6px 10px;border-radius:8px;cursor:pointer;font-size:.85rem}
 .tab-btn.active{border-color:var(--accent);color:#fff}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .thumb{background:#121212;border-radius:8px;overflow:hidden;position:relative;height:120px;cursor:pointer}
 .thumb img{width:100%;height:100%;object-fit:cover}
 .label{position:absolute;left:6px;bottom:6px;padding:4px 6px;font-size:11px;border-radius:4px;background:rgba(0,0,0,.6)}
 
-/* Lightbox */
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center}
-.lb.show{display:flex}
-.lb img{max-width:90%;max-height:90%}
-.lb .close{
-  position:absolute;top:16px;right:16px;
-  background:#fff;color:#000;border-radius:50%;
-  width:28px;height:28px;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;font-weight:bold
-}
+.contact-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.icon-link{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;background:#151515;border:1px solid #222;padding:8px 10px;border-radius:8px}
+.icon-link:hover{border-color:var(--accent)}
+.icon{width:20px;height:20px}
+.ticket-btn{background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;font-weight:700;text-decoration:none}
 
-/* Responsive */
 @media(max-width:760px){
   .grid{grid-template-columns:1fr}
-  header{flex-direction:column;gap:8px;align-items:flex-start}
+  header{flex-direction:column;align-items:flex-start}
 }
