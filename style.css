@@ -29,8 +29,10 @@ nav a:hover {color:var(--accent)}
   background:var(--accent);color:#000;padding:8px 12px;border-radius:8px;font-weight:700;text-decoration:none
 }
 section {
-  min-height:100vh;padding:100px 24px 40px; /* top padding accounts for fixed header */
+  padding:80px 24px 40px; /* enough to clear the fixed header */
+  min-height:auto;        /* remove forced full screen height */
 }
+
 h2 {color:var(--accent);margin-bottom:16px}
 .container {max-width:1000px;margin:auto}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
