@@ -2,117 +2,34 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zhar1f09 | Roblox Developer</title>
-<style>
-:root{
-  --bg:#0a0a0a; --muted:#a0a5ab; --accent:#ff3b3b; --border:#1e1e1e;
-}
-body{margin:0;background:var(--bg);color:#fff;font-family:system-ui}
-.wrap{max-width:1100px;margin:auto;padding:24px}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.brand{display:flex;align-items:center;gap:14px}
-.brand .avatar{width:56px;height:56px;border-radius:10px;object-fit:cover;background:#222}
-.brand h1{margin:0;font-size:1.25rem}
-.brand p{margin:0;color:var(--muted);font-size:.9rem}
-.btn{background:var(--accent);color:#000;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
-.tab-btn{background:none;border:1px solid var(--border);color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer}
-.tab-btn.active{border-color:var(--accent);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.thumb{background:#121212;border-radius:10px;overflow:hidden;position:relative;height:150px;cursor:pointer}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.label{position:absolute;left:8px;bottom:8px;padding:5px 8px;font-size:12px;border-radius:6px;background:rgba(0,0,0,.6)}
-.lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center}
-.lb.show{display:flex}
-.lb img{max-width:90%;max-height:90%}
-.lb .close{position:absolute;top:20px;right:20px;background:#fff;color:#000;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:bold}
-@media(max-width:760px){.grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="wrap">
-
 <header>
   <div class="brand">
-    <img class="avatar" id="avatar" alt="Profile picture">
-    <div>
-      <h1>Zhar1f09</h1>
-      <p>Roblox Developer</p>
-    </div>
+    <img id="avatar" alt="Profile">
+    <h1>Zhar1f09</h1>
   </div>
-  <a class="btn" id="hireBtn" target="_blank">Hire Me</a>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="prices.html">Prices</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="contact.html">Contact</a>
+    <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
+  </nav>
 </header>
-
-<section id="portfolio">
-  <div class="tabs" id="tabs"></div>
-  <div class="grid" id="grid"></div>
-</section>
-
-<div class="lb" id="lb">
-  <span class="close" id="lbclose">×</span>
-  <img id="lbimg" alt="Preview">
+<div class="container">
+  <h2>Welcome</h2>
+  <p>This is my Roblox developer portfolio. Explore my work, prices, and reviews.</p>
 </div>
-
-</div>
-
-<script src="imageCategories.js"></script>
 <script>
-// Discord config
-const DISCORD_USER_ID = "103916006189352294";
-const DISCORD_INVITE = "https://discord.gg/Hghmu67jwU";
-
-// Load avatar from Discord CDN
+// Discord avatar fix: use default embed avatar if no hash
 document.getElementById('avatar').src =
-  `https://cdn.discordapp.com/avatars/${DISCORD_USER_ID}/avatar.png?size=128`;
-
-// Hire Me button links to Discord profile
-document.getElementById('hireBtn').href =
-  `https://discord.com/users/${DISCORD_USER_ID}`;
-
-// Portfolio tabs
-const tabsEl=document.getElementById('tabs');
-const gridEl=document.getElementById('grid');
-const categories=Object.keys(portfolio);
-
-categories.forEach((cat,i)=>{
-  const btn=document.createElement('button');
-  btn.className=`tab-btn${i===0?' active':''}`;
-  btn.dataset.tab=cat;
-  btn.textContent=cat.charAt(0).toUpperCase()+cat.slice(1);
-  tabsEl.appendChild(btn);
-});
-renderCategory(categories[0]);
-
-function renderCategory(cat){
-  gridEl.innerHTML='';
-  portfolio[cat].forEach((file,i)=>{
-    const thumb=document.createElement('div');
-    thumb.className='thumb';
-    const img=document.createElement('img');
-    img.src=`Images/${cat}/${file}`;
-    img.alt=`${cat} ${i+1}`;
-    const label=document.createElement('div');
-    label.className='label';
-    label.textContent=`${cat.charAt(0).toUpperCase()+cat.slice(1)} ${i+1}`;
-    thumb.appendChild(img); thumb.appendChild(label);
-    gridEl.appendChild(thumb);
-  });
-}
-tabsEl.addEventListener('click',e=>{
-  const btn=e.target.closest('.tab-btn'); if(!btn) return;
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); renderCategory(btn.dataset.tab);
-});
-
-// Lightbox
-const lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg');
-document.addEventListener('click',e=>{
-  const img=e.target.closest('.thumb img'); if(!img) return;
-  lbimg.src=img.src; lb.classList.add('show');
-});
-document.getElementById('lbclose').onclick=()=>lb.classList.remove('show');
-lb.onclick=e=>{if(e.target===lb) lb.classList.remove('show');};
+  "https://cdn.discordapp.com/embed/avatars/0.png";
+// If you know your avatar hash, replace 0.png with:
+// `https://cdn.discordapp.com/avatars/103916006189352294/HASH.png?size=128`
 </script>
 </body>
 </html>
