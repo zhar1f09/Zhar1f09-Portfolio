@@ -6,12 +6,14 @@
   --panel:#111;
 }
 
+/* Header height is ~70px, so offset the body */
 body {
   margin:0;
   font-family:system-ui;
   background:var(--bg);
   color:var(--text);
   scroll-behavior:smooth;
+  padding-top:70px; /* <-- this ensures About Me is visible on load */
 }
 
 /* Header */
@@ -49,7 +51,7 @@ nav a:hover {color:var(--accent)}
 section {
   padding:30px 20px;
   min-height:auto;
-  scroll-margin-top:70px; /* ensures headings visible below header */
+  scroll-margin-top:70px; /* ensures anchor scroll stops below header */
 }
 
 /* Special fix for first section (About) */
