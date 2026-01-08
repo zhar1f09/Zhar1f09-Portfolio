@@ -229,4 +229,19 @@ tabsEl.addEventListener('click', (e) => {
 // Lightbox for previews
 // -------------------------
 const lb = document.getElementById('lb');
-const lbimg = document
+const lbimg = document.getElementById('lbimg');
+const lbclose = document.getElementById('lbclose');
+
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('.thumb img');
+  if (!img) return;
+  lbimg.src = img.src;
+  lb.classList.add('show');
+});
+lbclose.addEventListener('click', () => lb.classList.remove('show'));
+lb.addEventListener('click', (e) => {
+  if (e.target === lb) lb.classList.remove('show');
+});
+</script>
+</body>
+</html>
