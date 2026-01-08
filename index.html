@@ -2,34 +2,135 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zhar1f09 | Roblox Developer</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <div class="brand">
-    <img id="avatar" alt="Profile">
-    <h1>Zhar1f09</h1>
-  </div>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="prices.html">Prices</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="contact.html">Contact</a>
-    <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
-  </nav>
-</header>
-<div class="container">
-  <h2>Welcome</h2>
-  <p>This is my Roblox developer portfolio. Explore my work, prices, and reviews.</p>
+<div class="wrap">
+
+<!-- HERO -->
+<section class="hero">
+  <img src="Images/profile.png" alt="Profile Picture" class="profile-pic">
+  <h1>Zhar1f09</h1>
+  <p class="tagline">Roblox Developer | Modeling • Building • Clothing • Server Systems</p>
+  <a href="#contact" class="btn">Hire Me</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m a Roblox developer specializing in <strong>modeling, building, clothing design, and server systems</strong>.
+    With a focus on professional polish and user experience, I create scalable projects that bring ideas to life.
+  </p>
+  <ul class="skills">
+    <li>✔ Modeling & 3D Assets</li>
+    <li>✔ Building & Environment Design</li>
+    <li>✔ Clothing & Branding</li>
+    <li>✔ Server Systems & Scripting</li>
+  </ul>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <h2>Portfolio</h2>
+  <div class="tabs" id="tabs"></div>
+  <div id="galleries"></div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Interested in working together? Reach out via:</p>
+  <ul class="contact-links">
+    <li><a href="mailto:your@email.com">📧 Email</a></li>
+    <li><a href="https://github.com/yourgithub" target="_blank">💻 GitHub</a></li>
+    <li><a href="https://discord.gg/yourdiscord" target="_blank">💬 Discord</a></li>
+  </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Zhar1f09 | Roblox Developer Portfolio</p>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <span class="close" id="lbclose">×</span>
+  <img id="lbimg" alt="Preview">
 </div>
+
+</div>
+
+<script src="imageCategories.js"></script>
 <script>
-// Discord avatar fix: use default embed avatar if no hash
-document.getElementById('avatar').src =
-  "https://cdn.discordapp.com/embed/avatars/0.png";
-// If you know your avatar hash, replace 0.png with:
-// `https://cdn.discordapp.com/avatars/103916006189352294/HASH.png?size=128`
+// Generate tabs and galleries
+const tabs = document.getElementById('tabs');
+const galleries = document.getElementById('galleries');
+
+Object.keys(portfolio).forEach((cat,i)=>{
+  const btn=document.createElement('button');
+  btn.className='tab-btn'+(i===0?' active':'');
+  btn.dataset.tab=cat;
+  btn.textContent=cat.charAt(0).toUpperCase()+cat.slice(1);
+  tabs.appendChild(btn);
+
+  const gallery=document.createElement('div');
+  gallery.className='gallery';
+  gallery.dataset.tab=cat;
+  gallery.style.display=i===0?'block':'none';
+
+  const grid=document.createElement('div');
+  grid.className='grid';
+
+  portfolio[cat].forEach((file,j)=>{
+    const thumb=document.createElement('div');
+    thumb.className='thumb';
+    const img=document.createElement('img');
+    img.src=`Images/${cat}/${file}`;
+    img.alt=`${cat} ${j+1}`;
+    img.loading="lazy";
+    const label=document.createElement('div');
+    label.className='label';
+    label.textContent=`${cat.charAt(0).toUpperCase()+cat.slice(1)} ${j+1}`;
+    thumb.appendChild(img);
+    thumb.appendChild(label);
+    grid.appendChild(thumb);
+  });
+
+  gallery.appendChild(grid);
+  galleries.appendChild(gallery);
+});
+
+// Tab switching
+const tabBtns=document.querySelectorAll('.tab-btn');
+const galleryDivs=document.querySelectorAll('.gallery');
+tabBtns.forEach(t=>{
+  t.onclick=()=>{
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    t.classList.add('active');
+    galleryDivs.forEach(g=>{
+      g.style.display=g.dataset.tab===t.dataset.tab?'block':'none';
+    });
+  };
+});
+
+// Lightbox
+const lb=document.getElementById('lb');
+const lbimg=document.getElementById('lbimg');
+const lbclose=document.getElementById('lbclose');
+
+document.addEventListener('click',e=>{
+  if(e.target.tagName==='IMG' && e.target.closest('.thumb')){
+    lbimg.src=e.target.src;
+    lb.classList.add('show');
+  }
+});
+lbclose.onclick=()=>lb.classList.remove('show');
+lb.onclick=e=>{
+  if(e.target===lb) lb.classList.remove('show');
+};
 </script>
 </body>
 </html>
