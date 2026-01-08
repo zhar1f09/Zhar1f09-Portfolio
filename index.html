@@ -4,84 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Zhar1f09 | Roblox Developer</title>
-
-<style>
-:root {
-  --bg:#000;
-  --panel:#0f0f0f;
-  --muted:#9aa0a6;
-  --accent:#ff3b3b;
-  --radius:12px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:system-ui;
-  background:var(--bg);
-  color:#fff;
-}
-.wrap{max-width:1100px;margin:auto;padding:32px}
-header{display:flex;justify-content:space-between;align-items:center}
-.brand{display:flex;gap:14px;align-items:center}
-.brand img{width:56px;height:56px;border-radius:10px}
-nav a{color:var(--muted);margin-left:14px;text-decoration:none}
-.btn{background:var(--accent);color:#000;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
-
-.tabs{display:flex;gap:8px;margin-top:20px}
-.tab-btn{
-  background:none;border:1px solid #222;color:var(--muted);
-  padding:10px 14px;border-radius:10px;cursor:pointer
-}
-.tab-btn.active{border-color:var(--accent);color:#fff}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-  margin-top:16px
-}
-.thumb{
-  background:#111;
-  height:150px;
-  border-radius:10px;
-  overflow:hidden;
-  cursor:pointer;
-  position:relative
-}
-.thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover
-}
-.label{
-  position:absolute;
-  bottom:8px;left:8px;
-  background:rgba(0,0,0,.6);
-  padding:5px 8px;
-  font-size:12px;
-  border-radius:6px
-}
-
-.lb{
-  position:fixed;inset:0;
-  background:rgba(0,0,0,.85);
-  display:none;align-items:center;justify-content:center
-}
-.lb.show{display:flex}
-.lb img{max-width:90%;max-height:90%}
-
-@media(max-width:700px){
-  .grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="style.css"> <!-- optional external CSS -->
 </head>
-
 <body>
 <div class="wrap">
 
 <header>
   <div class="brand">
-    <img src="Images/profile.png">
+    <img src="Images/profile.png" alt="Profile">
     <div>
       <h2 style="margin:0">Zhar1f09</h2>
       <small class="muted">Roblox Developer</small>
@@ -95,87 +25,86 @@ nav a{color:var(--muted);margin-left:14px;text-decoration:none}
 
 <h2 id="portfolio" style="margin-top:30px">Portfolio</h2>
 
-<div class="tabs">
-  <button class="tab-btn active" data-tab="modeling">Modeling</button>
-  <button class="tab-btn" data-tab="building">Building</button>
-  <button class="tab-btn" data-tab="clothing">Clothing</button>
-  <button class="tab-btn" data-tab="server">Server</button>
-  <button class="tab-btn" data-tab="wip">W.I.P</button>
-</div>
+<div class="tabs" id="tabs"></div>
+<div id="galleries"></div>
 
-<!-- MODELING -->
-<div class="gallery" data-tab="modeling">
-  <div class="grid">
-    <div class="thumb"><img src="Images/modeling/model1.png"><div class="label">Modeling 1</div></div>
-    <div class="thumb"><img src="Images/modeling/model2.png"><div class="label">Modeling 2</div></div>
-    <div class="thumb"><img src="Images/modeling/model3.png"><div class="label">Modeling 3</div></div>
-  </div>
+<div class="lb" id="lb">
+  <span class="close" id="lbclose">×</span>
+  <img id="lbimg" alt="Preview">
 </div>
-
-<!-- BUILDING -->
-<div class="gallery" data-tab="building" style="display:none">
-  <div class="grid">
-    <div class="thumb"><img src="Images/building/building1.png"><div class="label">Building 1</div></div>
-    <div class="thumb"><img src="Images/building/building2.png"><div class="label">Building 2</div></div>
-    <div class="thumb"><img src="Images/building/building3.png"><div class="label">Building 3</div></div>
-  </div>
-</div>
-
-<!-- CLOTHING -->
-<div class="gallery" data-tab="clothing" style="display:none">
-  <div class="grid">
-    <div class="thumb"><img src="Images/clothing/clothing1.png"><div class="label">Clothing 1</div></div>
-    <div class="thumb"><img src="Images/clothing/clothing2.png"><div class="label">Clothing 2</div></div>
-    <div class="thumb"><img src="Images/clothing/clothing3.png"><div class="label">Clothing 3</div></div>
-  </div>
-</div>
-
-<!-- SERVER -->
-<div class="gallery" data-tab="server" style="display:none">
-  <div class="grid">
-    <div class="thumb"><img src="Images/server/server1.png"><div class="label">Server 1</div></div>
-    <div class="thumb"><img src="Images/server/server2.png"><div class="label">Server 2</div></div>
-    <div class="thumb"><img src="Images/server/server3.png"><div class="label">Server 3</div></div>
-  </div>
-</div>
-
-<!-- WIP -->
-<div class="gallery" data-tab="wip" style="display:none">
-  <div class="grid">
-    <div class="thumb"><img src="Images/wip/wip1.png"><div class="label">W.I.P 1</div></div>
-    <div class="thumb"><img src="Images/wip/wip2.png"><div class="label">W.I.P 2</div></div>
-    <div class="thumb"><img src="Images/wip/wip3.png"><div class="label">W.I.P 3</div></div>
-  </div>
-</div>
-
-<div class="lb" id="lb"><img id="lbimg"></div>
 
 </div>
 
+<script src="imageCategories.js"></script>
 <script>
-const tabs=document.querySelectorAll('.tab-btn');
-const galleries=document.querySelectorAll('.gallery');
+// Generate tabs and galleries from portfolio object
+const tabs = document.getElementById('tabs');
+const galleries = document.getElementById('galleries');
 
-tabs.forEach(t=>{
-  t.onclick=()=>{
-    tabs.forEach(b=>b.classList.remove('active'));
-    t.classList.add('active');
-    galleries.forEach(g=>{
-      g.style.display=g.dataset.tab===t.dataset.tab?'block':'none';
-    });
-  }
+Object.keys(portfolio).forEach((cat,i)=>{
+  // Tab button
+  const btn=document.createElement('button');
+  btn.className='tab-btn'+(i===0?' active':'');
+  btn.dataset.tab=cat;
+  btn.textContent=cat.charAt(0).toUpperCase()+cat.slice(1);
+  tabs.appendChild(btn);
+
+  // Gallery
+  const gallery=document.createElement('div');
+  gallery.className='gallery';
+  gallery.dataset.tab=cat;
+  gallery.style.display=i===0?'block':'none';
+
+  const grid=document.createElement('div');
+  grid.className='grid';
+
+  portfolio[cat].forEach((file,j)=>{
+    const thumb=document.createElement('div');
+    thumb.className='thumb';
+    const img=document.createElement('img');
+    img.src=`Images/${cat}/${file}`;
+    img.alt=`${cat} ${j+1}`;
+    img.loading="lazy";
+    const label=document.createElement('div');
+    label.className='label';
+    label.textContent=`${cat.charAt(0).toUpperCase()+cat.slice(1)} ${j+1}`;
+    thumb.appendChild(img);
+    thumb.appendChild(label);
+    grid.appendChild(thumb);
+  });
+
+  gallery.appendChild(grid);
+  galleries.appendChild(gallery);
 });
 
+// Tab switching
+const tabBtns=document.querySelectorAll('.tab-btn');
+const galleryDivs=document.querySelectorAll('.gallery');
+tabBtns.forEach(t=>{
+  t.onclick=()=>{
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    t.classList.add('active');
+    galleryDivs.forEach(g=>{
+      g.style.display=g.dataset.tab===t.dataset.tab?'block':'none';
+    });
+  };
+});
+
+// Lightbox
 const lb=document.getElementById('lb');
 const lbimg=document.getElementById('lbimg');
-document.querySelectorAll('.thumb img').forEach(img=>{
-  img.onclick=()=>{
-    lbimg.src=img.src;
+const lbclose=document.getElementById('lbclose');
+
+document.addEventListener('click',e=>{
+  if(e.target.tagName==='IMG' && e.target.closest('.thumb')){
+    lbimg.src=e.target.src;
     lb.classList.add('show');
   }
 });
-lb.onclick=()=>lb.classList.remove('show');
+lbclose.onclick=()=>lb.classList.remove('show');
+lb.onclick=e=>{
+  if(e.target===lb) lb.classList.remove('show');
+};
 </script>
-
 </body>
 </html>
