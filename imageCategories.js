@@ -1,32 +1,80 @@
 const imageCategories = {
   modeling: [
-    "Images/Modeling/Hat.blend",
-    "Images/Modeling/Mini Van Campervan.blend",
-    "Images/Modeling/Low-Poly Blue Car.blend",
-    "Images/Modeling/Wooden Hammer.blend",
-    "Images/Modeling/knife 1.blend"
+    {
+      title: "Modeling 1",
+      images: ["Images/Modeling/Hat.png"]
+    },
+    {
+      title: "Modeling 2",
+      images: ["Images/Modeling/MiniVan.png"]
+    },
+    {
+      title: "Modeling 3",
+      images: ["Images/Modeling/LowPolyCar.png"]
+    },
+    {
+      title: "Modeling 4",
+      images: ["Images/Modeling/WoodenHammer.png"]
+    },
+    {
+      title: "Modeling 5",
+      images: ["Images/Modeling/Knife.png"]
+    }
   ],
 
   building: [
-    "Images/Building/bunker.png",
-    "Images/Building/Concert Stadium.png",
-    "Images/Building/Fantasy House.png",
-    "Images/Building/HDB Filler Block.png"
+    {
+      title: "Building 1",
+      images: ["Images/Building/bunker.png"]
+    },
+    {
+      title: "Building 2",
+      images: ["Images/Building/Concert Stadium.png"]
+    },
+    {
+      title: "Building 3",
+      images: ["Images/Building/Fantasy House.png"]
+    },
+    {
+      title: "Building 4",
+      images: ["Images/Building/HDB Filler Block.png"]
+    }
   ],
 
   clothing: [
-    "Images/Clothing/GB Jersey 2D.png",
-    "Images/Clothing/Shizuku Jersey 2D.png",
-    "Images/Clothing/Shizuku Jersey Black 2D.png"
+    {
+      title: "Clothing 1",
+      images: ["Images/Clothing/GB Jersey 2D.png"]
+    },
+    {
+      title: "Clothing 2",
+      images: ["Images/Clothing/Shizuku Jersey 2D.png"]
+    },
+    {
+      title: "Clothing 3",
+      images: ["Images/Clothing/Shizuku Jersey Black 2D.png"]
+    }
   ],
 
   server: [
-    "Images/Server/Server1.png",
-    "Images/Server/Server2.png"
+    {
+      title: "Server 1",
+      images: ["Images/Server/Server1.png"]
+    },
+    {
+      title: "Server 2",
+      images: ["Images/Server/Server2.png"]
+    }
   ],
 
   wip: [
-    "Images/WIP/WIP1.png",
-    "Images/WIP/WIP2.png"
+    {
+      title: "W.I.P 1",
+      images: ["Images/WIP/WIP1.png"]
+    },
+    {
+      title: "W.I.P 2",
+      images: ["Images/WIP/WIP2.png"]
+    }
   ]
 };
