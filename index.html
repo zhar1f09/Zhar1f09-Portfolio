@@ -53,17 +53,29 @@
     <div class="contact-row">
       <!-- Discord logo link -->
       <a class="icon-link" href="https://discord.com/users/103916006189352294" target="_blank">
-        <img src="Images/discord-logo.png" alt="Discord" class="icon"> Discord
+        <svg class="icon" viewBox="0 0 24 24" fill="#5865F2" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20.317 4.369A19.791..."/>
+        </svg>
+        Discord
       </a>
       <!-- Create a Ticket button -->
       <a class="ticket-btn" href="https://discord.gg/Hghmu67jwU" target="_blank">Create a Ticket</a>
       <!-- Roblox logo link -->
       <a class="icon-link" href="https://www.roblox.com/users/YOUR_ID/profile" target="_blank">
-        <img src="Images/roblox-logo.png" alt="Roblox" class="icon"> Roblox
+        <svg class="icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.1 2L2 17.9 17.9 22 22 6.1 6.1 2zm6.4 9.5a2 2 0 1 1-1.4-2.4 2 2 0 0 1 1.4 2.4z"/>
+        </svg>
+        Roblox
       </a>
     </div>
   </div>
 </section>
+
+<!-- Lightbox -->
+<div class="lb" id="lb">
+  <span class="close" id="lbclose">×</span>
+  <img id="lbimg" alt="Preview">
+</div>
 
 <script src="imageCategories.js"></script>
 <script>
@@ -85,6 +97,44 @@ function render(cat){
   });
 }
 render(categories[0]);
+
+// Lightbox with zoom/pan
+const lb = document.getElementById('lb');
+const lbimg = document.getElementById('lbimg');
+const lbclose = document.getElementById('lbclose');
+let scale = 1, originX=0, originY=0, isDragging=false, startX, startY;
+
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('.thumb img');
+  if (!img) return;
+  lbimg.src = img.src;
+  lb.classList.add('show');
+  scale = 1; originX=0; originY=0;
+  lbimg.style.transform = `translate(0,0) scale(1)`;
+});
+lbclose.addEventListener('click', () => lb.classList.remove('show'));
+lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('show'); });
+
+// Zoom with wheel
+lb.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  if (e.deltaY < 0) scale += 0.1; else scale = Math.max(0.5, scale - 0.1);
+  lbimg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+});
+
+// Drag to pan
+lbimg.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.clientX - originX;
+  startY = e.clientY - originY;
+});
+window.addEventListener('mouseup', () => isDragging = false);
+window.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  originX = e.clientX - startX;
+  originY = e.clientY - startY;
+  lbimg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+});
 </script>
 </body>
 </html>
