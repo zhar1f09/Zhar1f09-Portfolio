@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Zhar1f09 | Roblox Developer</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Zhar1f09 | Roblox Developer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header id="siteHeader">
@@ -98,43 +98,19 @@ function render(cat){
 }
 render(categories[0]);
 
-// Lightbox with zoom/pan
+// Lightbox: click thumbnail → show full image
 const lb = document.getElementById('lb');
 const lbimg = document.getElementById('lbimg');
 const lbclose = document.getElementById('lbclose');
-let scale = 1, originX=0, originY=0, isDragging=false, startX, startY;
 
 document.addEventListener('click', (e) => {
   const img = e.target.closest('.thumb img');
   if (!img) return;
   lbimg.src = img.src;
   lb.classList.add('show');
-  scale = 1; originX=0; originY=0;
-  lbimg.style.transform = `translate(0,0) scale(1)`;
 });
 lbclose.addEventListener('click', () => lb.classList.remove('show'));
 lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('show'); });
-
-// Zoom with wheel
-lb.addEventListener('wheel', (e) => {
-  e.preventDefault();
-  if (e.deltaY < 0) scale += 0.1; else scale = Math.max(0.5, scale - 0.1);
-  lbimg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
-});
-
-// Drag to pan
-lbimg.addEventListener('mousedown', (e) => {
-  isDragging = true;
-  startX = e.clientX - originX;
-  startY = e.clientY - originY;
-});
-window.addEventListener('mouseup', () => isDragging = false);
-window.addEventListener('mousemove', (e) => {
-  if (!isDragging) return;
-  originX = e.clientX - startX;
-  originY = e.clientY - startY;
-  lbimg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
-});
 </script>
 </body>
 </html>
