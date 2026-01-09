@@ -15,42 +15,86 @@ body {
   padding-top:70px; /* ensures About is visible under fixed header */
 }
 
+/* Header */
 header {
-  position:fixed;top:0;left:0;right:0;
+  position:fixed;
+  top:0;left:0;right:0;
   background:var(--panel);
   padding:10px 20px;
-  display:flex;justify-content:space-between;align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
   z-index:1000;
 }
-nav a {color:var(--muted);margin-left:12px;text-decoration:none;font-weight:500;font-size:.9rem}
+.brand {display:flex;align-items:center;gap:10px}
+.brand img.avatar {width:40px;height:40px;border-radius:8px;object-fit:cover;background:#222}
+.brand .name {margin:0;font-size:1rem;font-weight:700}
+nav a {
+  color:var(--muted);
+  margin-left:12px;
+  text-decoration:none;
+  font-weight:500;
+  font-size:.9rem;
+}
 nav a:hover {color:var(--accent)}
-.btn {background:var(--accent);color:#000;padding:6px 10px;border-radius:6px;font-weight:700;text-decoration:none;font-size:.9rem}
+.btn {
+  background:var(--accent);
+  color:#000;
+  padding:6px 10px;
+  border-radius:6px;
+  font-weight:700;
+  text-decoration:none;
+  font-size:.9rem;
+}
 
-section {padding:30px 20px;min-height:auto;scroll-margin-top:80px}
+/* Sections */
+section {
+  padding:30px 20px;
+  min-height:auto;
+  scroll-margin-top:80px;
+}
 .container {max-width:1000px;margin:auto}
 h2 {color:var(--accent);margin:0 0 10px}
 
-.prices-list{list-style:none;padding:0;margin:8px 0}
-.prices-list li{margin:6px 0;color:var(--muted)}
+/* Prices */
+.prices-list {list-style:none;padding:0;margin:8px 0}
+.prices-list li {margin:6px 0;color:var(--muted)}
 
-.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-.tab-btn{background:none;border:1px solid #333;color:var(--muted);padding:6px 10px;border-radius:8px;cursor:pointer;font-size:.85rem}
-.tab-btn.active{border-color:var(--accent);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.thumb{background:#121212;border-radius:8px;overflow:hidden;position:relative;height:120px;cursor:pointer}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.label{position:absolute;left:6px;bottom:6px;padding:4px 6px;font-size:11px;border-radius:4px;background:rgba(0,0,0,.6)}
-
-.contact-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.icon-link{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none;background:#
-           
-.contact-row {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
+/* Portfolio tabs + grid */
+.tabs {display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.tab-btn {
+  background:none;
+  border:1px solid #333;
+  color:var(--muted);
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:.85rem;
+}
+.tab-btn.active {border-color:var(--accent);color:#fff}
+.grid {display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.thumb {
+  background:#121212;
+  border-radius:8px;
+  overflow:hidden;
+  position:relative;
+  height:120px;
+  cursor:pointer;
+}
+.thumb img {width:100%;height:100%;object-fit:cover}
+.label {
+  position:absolute;
+  left:6px;
+  bottom:6px;
+  padding:4px 6px;
+  font-size:11px;
+  border-radius:4px;
+  background:rgba(0,0,0,.6);
+  color:#ddd;
 }
 
+/* Contact */
+.contact-row {display:flex;gap:12px;flex-wrap:wrap;align-items:center}
 .icon-link {
   display:flex;
   align-items:center;
@@ -63,12 +107,7 @@ h2 {color:var(--accent);margin:0 0 10px}
   border-radius:8px;
 }
 .icon-link:hover {border-color:var(--accent)}
-
-.icon {
-  width:20px;
-  height:20px;
-}
-
+.icon {width:20px;height:20px}
 .ticket-btn {
   background:var(--accent);
   color:#000;
@@ -78,7 +117,7 @@ h2 {color:var(--accent);margin:0 0 10px}
   text-decoration:none;
 }
 
-/* Lightbox styling */
+/* Lightbox */
 .lb {
   position:fixed;
   inset:0;
@@ -92,8 +131,7 @@ h2 {color:var(--accent);margin:0 0 10px}
 .lb img {
   max-width:90%;
   max-height:90%;
-  transition:transform 0.2s ease;
-  cursor:grab;
+  border-radius:8px;
 }
 .lb .close {
   position:absolute;
@@ -111,7 +149,7 @@ h2 {color:var(--accent);margin:0 0 10px}
   font-weight:bold;
 }
 
-/* Responsive tweaks */
+/* Responsive */
 @media(max-width:760px){
   .grid{grid-template-columns:1fr}
   header{flex-direction:column;align-items:flex-start}
