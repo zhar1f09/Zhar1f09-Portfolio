@@ -71,10 +71,12 @@
   </div>
 </section>
 
-<!-- Lightbox -->
+<!-- Lightbox with arrows -->
 <div class="lb" id="lb">
   <span class="close" id="lbclose">×</span>
+  <span class="arrow left" id="lbleft">‹</span>
   <img id="lbimg" alt="Preview">
+  <span class="arrow right" id="lbright">›</span>
 </div>
 
 <script src="imageCategories.js"></script>
@@ -98,19 +100,42 @@ function render(cat){
 }
 render(categories[0]);
 
-// Lightbox: click thumbnail → show full image
+// Lightbox with arrows
 const lb = document.getElementById('lb');
 const lbimg = document.getElementById('lbimg');
 const lbclose = document.getElementById('lbclose');
+const lbleft = document.getElementById('lbleft');
+const lbright = document.getElementById('lbright');
+
+let currentCategory = null;
+let currentIndex = 0;
 
 document.addEventListener('click', (e) => {
   const img = e.target.closest('.thumb img');
   if (!img) return;
+  const activeTab = document.querySelector('.tab-btn.active').textContent.toLowerCase();
+  currentCategory = activeTab;
+  const files = portfolio[currentCategory];
+  currentIndex = files.findIndex(f => img.src.includes(f));
   lbimg.src = img.src;
   lb.classList.add('show');
 });
+
 lbclose.addEventListener('click', () => lb.classList.remove('show'));
 lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('show'); });
+
+lbright.addEventListener('click', () => {
+  if (!currentCategory) return;
+  const files = portfolio[currentCategory];
+  currentIndex = (currentIndex + 1) % files.length;
+  lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
+});
+lbleft.addEventListener('click', () => {
+  if (!currentCategory) return;
+  const files = portfolio[currentCategory];
+  currentIndex = (currentIndex - 1 + files.length) % files.length;
+  lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
+});
 </script>
 </body>
 </html>
