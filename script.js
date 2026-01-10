@@ -1,15 +1,22 @@
 const projectSection = document.getElementById("projects");
+const buttons = document.querySelectorAll(".filters button");
 
-Object.keys(portfolio).forEach(category => {
-  const grid = document.createElement("div");
-  grid.className = "grid";
-
+function renderCategory(category) {
+  projectSection.innerHTML = "";
   portfolio[category].forEach(fileName => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `<img src="images/${fileName}" alt="${category} image">`;
-    grid.appendChild(card);
+    projectSection.appendChild(card);
   });
+}
 
-  projectSection.appendChild(grid);
+// Default load
+renderCategory("modeling");
+
+// Filter buttons
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    renderCategory(btn.dataset.category);
+  });
 });
