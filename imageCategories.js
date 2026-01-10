@@ -1,5 +1,3 @@
-// imageCategories.js
-
 const portfolio = {
   modeling: ["model1.png", "model2.png", "model3.png"],
   building: ["building1.png", "building2.png", "building3.png"],
