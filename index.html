@@ -156,17 +156,8 @@ function updateTime(){
 setInterval(updateTime, 1000);
 updateTime();
 
-// Visitor counter (count once per browser)
-let visits = localStorage.getItem('visits') || 0;
-let alreadyCounted = localStorage.getItem('alreadyCounted');
-
-if (!alreadyCounted) {
-  visits++;
-  localStorage.setItem('visits', visits);
-  localStorage.setItem('alreadyCounted', 'true');
-}
-
-document.getElementById('visits').textContent = "Visits: " + visits;
+// Visitor counter fixed to 1
+document.getElementById('visits').textContent = "Visits: 1";
 </script>
 </body>
 </html>
