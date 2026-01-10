@@ -7,8 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #333;
+  background: #111; /* dark background */
+  color: #eee;      /* light text */
   line-height: 1.6;
 }
 
@@ -17,7 +17,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #222;
+  background: #000; /* black header */
   color: #fff;
   padding: 1rem 2rem;
 }
@@ -41,7 +41,7 @@ nav a {
 }
 
 nav .btn {
-  background: #5865F2;
+  background: #c00; /* red button */
   padding: 0.5rem 1rem;
   border-radius: 4px;
   color: #fff;
@@ -64,9 +64,10 @@ section {
 }
 
 .prices-list li {
-  background: #eee;
+  background: #222;
   margin: 0.5rem 0;
   padding: 0.5rem;
+  border-left: 4px solid #c00; /* red accent */
 }
 
 /* Portfolio */
@@ -78,12 +79,13 @@ section {
   padding: 0.5rem 1rem;
   margin-right: 0.5rem;
   border: none;
-  background: #ddd;
+  background: #333;
+  color: #eee;
   cursor: pointer;
 }
 
 .tab-btn.active {
-  background: #5865F2;
+  background: #c00; /* red active tab */
   color: #fff;
 }
 
@@ -113,7 +115,7 @@ section {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
 }
