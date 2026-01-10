@@ -12,7 +12,7 @@ body {
   background:var(--bg);
   color:var(--text);
   scroll-behavior:smooth;
-  padding-top:100px;
+  padding-top:120px;
 }
 
 /* Header centered */
@@ -31,16 +31,13 @@ header {
   align-items:center;
   gap:8px;
 }
-.header-center img.avatar {
-  width:50px;height:50px;border-radius:50%;object-fit:cover;
+.site-name {
+  margin:0;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--accent);
 }
-.header-center .name {
-  margin:0;font-size:1.2rem;font-weight:700;
-}
-nav {
-  display:flex;
-  gap:15px;
-}
+nav {display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
 nav a {
   color:var(--muted);
   text-decoration:none;
@@ -58,25 +55,29 @@ nav a:hover {color:var(--accent)}
   font-size:.9rem;
 }
 
-/* Profile section */
-#profile {
-  padding:60px 20px;
+/* Profile bar */
+#profile-bar {
   text-align:center;
-}
-.profile-center {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-}
-.profile-img {
-  width:120px;height:120px;border-radius:50%;object-fit:cover;
+  background:#151515;
+  padding:8px;
+  font-size:.95rem;
+  color:var(--muted);
 }
 
-/* Sections */
-section {padding:40px 20px;scroll-margin-top:120px}
-.container {max-width:1000px;margin:auto}
-h2 {color:var(--accent);margin:0 0 10px}
+/* About section */
+#about {
+  text-align:center;
+}
+#about h2 {
+  color:var(--accent);
+  font-size:1.4rem;
+  margin-bottom:10px;
+}
+#about p {
+  max-width:600px;
+  margin:auto;
+  color:var(--text);
+}
 
 /* Prices grid */
 .price-grid {
@@ -147,6 +148,7 @@ h2 {color:var(--accent);margin:0 0 10px}
   gap:12px;
   flex-wrap:wrap;
   align-items:center;
+  justify-content:center;
 }
 .icon-link {
   display:flex;
@@ -160,7 +162,6 @@ h2 {color:var(--accent);margin:0 0 10px}
   border-radius:8px;
 }
 .icon-link:hover {border-color:var(--accent)}
-.icon {width:20px;height:20px}
 .ticket-btn {
   background:var(--accent);
   color:#000;
@@ -223,4 +224,3 @@ h2 {color:var(--accent);margin:0 0 10px}
   header{flex-direction:column;align-items:center}
   nav{flex-wrap:wrap;justify-content:center}
 }
-
