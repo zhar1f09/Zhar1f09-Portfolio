@@ -15,7 +15,7 @@ body {
   padding-top:120px;
 }
 
-/* Header centered */
+/* Header */
 header {
   position:fixed;
   top:0;left:0;right:0;
@@ -49,7 +49,7 @@ nav a {
   font-weight:500;
   font-size:.9rem;
 }
-nav a:hover {color:var(--accent)}
+nav a:hover {color:var(--accent);}
 .btn {
   background:var(--accent);
   color:#000;
@@ -60,7 +60,7 @@ nav a:hover {color:var(--accent)}
   font-size:.9rem;
 }
 
-/* Profile section */
+/* Profile */
 #profile {
   padding:60px 20px;
   text-align:center;
@@ -114,9 +114,9 @@ section h2 {
   border:1px solid #444;
   text-align:center;
 }
-.price-stack {
-  display:flex;
-  flex-direction:column;
+.price-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
   gap:16px;
   margin-top:12px;
 }
@@ -158,7 +158,7 @@ section h2 {
 }
 #portfolio .grid {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:12px;
   justify-items:center;
 }
@@ -212,7 +212,7 @@ section h2 {
   padding:8px 10px;
   border-radius:8px;
 }
-.icon-link:hover {border-color:var(--accent)}
+.icon-link:hover {border-color:var(--accent);}
 .ticket-btn {
   background:var(--accent);
   color:#000;
@@ -232,7 +232,7 @@ section h2 {
   justify-content:center;
   z-index:999;
 }
-.lb.show {display:flex}
+.lb.show {display:flex;}
 .lb img {
   max-width:90%;
   max-height:90%;
@@ -271,7 +271,7 @@ section h2 {
 
 /* Responsive */
 @media(max-width:760px){
-  .grid{grid-template-columns:1fr}
-  header{flex-direction:column;align-items:center}
-  nav{flex-wrap:wrap;justify-content:center}
+  .grid{grid-template-columns:1fr;}
+  header{flex-direction:column;align-items:center;}
+  nav{flex-wrap:wrap;justify-content:center;}
 }
