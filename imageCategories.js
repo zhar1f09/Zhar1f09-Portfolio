@@ -1,14 +1,15 @@
-// Portfolio categories and their images
 const portfolio = {
   "Modeling": [
     "model1.png",
     "model2.png",
-    "model3.png"
+    "model3.png",
+    "model4.png"
   ],
   "Building": [
     "building1.png",
     "building2.png",
-    "building3.png"
+    "building3.png",
+    "building4.png"
   ],
   "Clothing": [
     "clothing1.png",
