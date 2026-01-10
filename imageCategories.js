@@ -1,27 +1,27 @@
 const portfolio = {
-  "Modeling": [
+  "modeling": [
     "model1.png",
     "model2.png",
     "model3.png",
     "model4.png"
   ],
-  "Building": [
+  "building": [
     "building1.png",
     "building2.png",
     "building3.png",
     "building4.png"
   ],
-  "Clothing": [
+  "clothing": [
     "clothing1.png",
     "clothing2.png",
     "clothing3.png"
   ],
-  "Discord Service": [
+  "discord Service": [
     "discord1.png",
     "discord2.png",
     "discord3.png"
   ],
-  "Graphics": [
+  "graphics": [
     "graphics1.png",
     "graphics2.png",
     "graphics3.png"
