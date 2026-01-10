@@ -2,33 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zhar1f09 | Roblox Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header id="siteHeader">
-  <div class="brand">
-    <img class="avatar" id="avatar" alt="Profile picture">
-    <p class="name">Zhar1f09</p>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#prices">Prices</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-    <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
-  </nav>
-</header>
 
-<section id="about">
-  <div class="container">
+  <!-- Header -->
+  <header id="siteHeader">
+    <div class="brand">
+      <img class="avatar" id="avatar" src="Images/avatar.png" alt="Profile picture of Zhar1f09">
+      <p class="name">Zhar1f09</p>
+    </div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#prices">Prices</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
+    </nav>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="container">
     <h2>About Me</h2>
     <p>I specialize in Roblox modeling, building, clothing design, and server systems. My focus is professional polish, scalable structure, and clean user experience.</p>
-  </div>
-</section>
+  </section>
 
-<section id="prices">
-  <div class="container">
+  <!-- Prices -->
+  <section id="prices" class="container">
     <h2>Prices</h2>
     <ul class="prices-list">
       <li>Modeling — from $10</li>
@@ -36,106 +38,44 @@
       <li>Clothing — from $5</li>
       <li>Server systems — from $20</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section id="portfolio">
-  <div class="container">
+  <!-- Portfolio -->
+  <section id="portfolio" class="container">
     <h2>Portfolio</h2>
     <div class="tabs" id="tabs"></div>
     <div class="grid" id="grid"></div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="container">
+  <!-- Contact -->
+  <section id="contact" class="container">
     <h2>Contact</h2>
     <div class="contact-row">
-      <!-- Discord logo link -->
-      <a class="icon-link" href="https://discord.com/users/103916006189352294" target="_blank">
-        <svg class="icon" viewBox="0 0 24 24" fill="#5865F2" xmlns="http://www.w3.org/2000/svg">
-          <path d="M20.317 4.369A19.791..."/>
-        </svg>
+      <!-- Discord -->
+      <a class="icon-link" href="https://discord.com/users/103916006189352294" target="_blank" aria-label="Discord">
+        <!-- Discord SVG here -->
         Discord
       </a>
-      <!-- Create a Ticket button -->
+      <!-- Ticket -->
       <a class="ticket-btn" href="https://discord.gg/Hghmu67jwU" target="_blank">Create a Ticket</a>
-      <!-- Roblox logo link -->
-      <a class="icon-link" href="https://www.roblox.com/users/YOUR_ID/profile" target="_blank">
-        <svg class="icon" viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6.1 2L2 17.9 17.9 22 22 6.1 6.1 2zm6.4 9.5a2 2 0 1 1-1.4-2.4 2 2 0 0 1 1.4 2.4z"/>
-        </svg>
+      <!-- Roblox -->
+      <a class="icon-link" href="https://www.roblox.com/users/YOUR_ID/profile" target="_blank" aria-label="Roblox">
+        <!-- Roblox SVG here -->
         Roblox
       </a>
     </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lb" id="lb">
+    <span class="close" id="lbclose">×</span>
+    <span class="arrow left" id="lbleft">‹</span>
+    <img id="lbimg" alt="Preview">
+    <span class="arrow right" id="lbright">›</span>
   </div>
-</section>
 
-<!-- Lightbox with arrows -->
-<div class="lb" id="lb">
-  <span class="close" id="lbclose">×</span>
-  <span class="arrow left" id="lbleft">‹</span>
-  <img id="lbimg" alt="Preview">
-  <span class="arrow right" id="lbright">›</span>
-</div>
-
-<script src="imageCategories.js"></script>
-<script>
-// Portfolio tabs
-const tabs=document.getElementById('tabs');
-const grid=document.getElementById('grid');
-const categories=Object.keys(portfolio);
-categories.forEach((cat,i)=>{
-  const b=document.createElement('button');
-  b.className='tab-btn'+(i===0?' active':'');
-  b.textContent=cat;
-  b.onclick=()=>{document.querySelectorAll('.tab-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');render(cat)};
-  tabs.appendChild(b);
-});
-function render(cat){
-  grid.innerHTML='';
-  portfolio[cat].forEach((f,i)=>{
-    grid.innerHTML+=`<div class="thumb"><img src="Images/${cat}/${f}" alt="${cat} ${i+1}"><div class="label">${cat} ${i+1}</div></div>`;
-  });
-}
-render(categories[0]);
-
-// Lightbox with arrows
-const lb = document.getElementById('lb');
-const lbimg = document.getElementById('lbimg');
-const lbclose = document.getElementById('lbclose');
-const lbleft = document.getElementById('lbleft');
-const lbright = document.getElementById('lbright');
-
-let currentCategory = null;
-let currentIndex = 0;
-
-document.addEventListener('click', (e) => {
-  const img = e.target.closest('.thumb img');
-  if (!img) return;
-  const activeTab = document.querySelector('.tab-btn.active').textContent.toLowerCase();
-  currentCategory = activeTab;
-  const files = portfolio[currentCategory];
-  currentIndex = files.findIndex(f => img.src.includes(f));
-  lbimg.src = img.src;
-  lb.classList.add('show');
-});
-
-lbclose.addEventListener('click', () => lb.classList.remove('show'));
-lb.addEventListener('click', (e) => { if (e.target === lb) lb.classList.remove('show'); });
-
-lbright.addEventListener('click', () => {
-  if (!currentCategory) return;
-  const files = portfolio[currentCategory];
-  currentIndex = (currentIndex + 1) % files.length;
-  lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
-});
-lbleft.addEventListener('click', () => {
-  if (!currentCategory) return;
-  const files = portfolio[currentCategory];
-  currentIndex = (currentIndex - 1 + files.length) % files.length;
-  lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
-});
-</script>
+  <!-- Scripts -->
+  <script src="imageCategories.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
