@@ -1,11 +1,13 @@
 const projectSection = document.getElementById("projects");
+const buttons = document.querySelectorAll(".filters button");
 
 function renderCategory(category) {
   projectSection.innerHTML = "";
   portfolio[category].forEach(fileName => {
     const card = document.createElement("div");
     card.className = "card";
-    card.innerHTML = `<img src="images/${fileName}" alt="${category}">`;
+    // Use /Images/<category>/<filename>
+    card.innerHTML = `<img src="Images/${category}/${fileName}" alt="${category}">`;
     projectSection.appendChild(card);
   });
 }
@@ -14,8 +16,10 @@ function renderCategory(category) {
 renderCategory("modeling");
 
 // Filter buttons
-document.querySelectorAll(".filters button").forEach(btn => {
+buttons.forEach(btn => {
   btn.addEventListener("click", () => {
+    buttons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
     renderCategory(btn.dataset.category);
   });
 });
