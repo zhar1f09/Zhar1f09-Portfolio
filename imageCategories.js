@@ -5,7 +5,8 @@ const portfolio = {
     "modeling2.png",
     "modeling3.png",
     "modeling4.png",
-    "modeling5.png"
+    "modeling5.png",
+    "modeling6.png"
   ],
   "building": [
     "building1.png",
