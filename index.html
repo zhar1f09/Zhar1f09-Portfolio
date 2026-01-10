@@ -32,14 +32,14 @@
 <section id="about">
   <div class="container about-center">
     <h2>About Me</h2>
-    <p>I specialize in Roblox modeling, building, clothing design, and server systems. My focus is professional polish, scalable structure, and clean user experience.</p>
+    <p>I specialize in Roblox modeling, building, clothing design, Discord services, and graphics. My focus is professional polish, scalable structure, and clean user experience.</p>
   </div>
 </section>
 
 <section id="prices">
   <div class="container">
     <h2>Prices</h2>
-    <div class="price-grid">
+    <div class="price-stack">
       <div class="price-box">
         <h3>Clothing</h3>
         <p>Full set – 100 Robux</p>
@@ -56,9 +56,14 @@
         <p>Large build – 500 Robux</p>
       </div>
       <div class="price-box">
-        <h3>Server Systems</h3>
-        <p>Basic system – 300 Robux</p>
-        <p>Advanced system – 800 Robux</p>
+        <h3>Discord Service</h3>
+        <p>Basic setup – 300 Robux</p>
+        <p>Advanced setup – 800 Robux</p>
+      </div>
+      <div class="price-box">
+        <h3>Graphics</h3>
+        <p>Logo – 150 Robux</p>
+        <p>Banner – 250 Robux</p>
       </div>
     </div>
   </div>
@@ -93,10 +98,17 @@
 
 <script src="imageCategories.js"></script>
 <script>
-// Portfolio tabs
+// Portfolio tabs with new categories
 const tabs=document.getElementById('tabs');
 const grid=document.getElementById('grid');
-const categories=Object.keys(portfolio);
+const categories=["Modeling","Building","Clothing","Discord Service","Graphics"];
+const portfolio = {
+  "Modeling":[],
+  "Building":[],
+  "Clothing":[],
+  "Discord Service":[],
+  "Graphics":[]
+};
 categories.forEach((cat,i)=>{
   const b=document.createElement('button');
   b.className='tab-btn'+(i===0?' active':'');
@@ -124,7 +136,7 @@ let currentIndex = 0;
 document.addEventListener('click', (e) => {
   const img = e.target.closest('.thumb img');
   if (!img) return;
-  const activeTab = document.querySelector('.tab-btn.active').textContent.toLowerCase();
+  const activeTab = document.querySelector('.tab-btn.active').textContent;
   currentCategory = activeTab;
   const files = portfolio[currentCategory];
   currentIndex = files.findIndex(f => img.src.includes(f));
@@ -146,12 +158,12 @@ lbleft.addEventListener('click', () => {
   lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
 });
 
-// Singapore time clock (12-hour format)
+// Singapore time clock (12-hour format with timezone)
 function updateTime(){
   const now = new Date();
   const options = { timeZone: 'Asia/Singapore', hour12:true };
   const sgTime = now.toLocaleTimeString('en-US', options);
-  document.getElementById('time').textContent = sgTime;
+  document.getElementById('time').textContent = sgTime + " SGT";
 }
 setInterval(updateTime, 1000);
 updateTime();
