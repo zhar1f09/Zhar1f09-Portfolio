@@ -1,172 +1,47 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #000; /* black background */
-  color: #fff;      /* white text */
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zharif Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 class="logo">Zharif</h1>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-/* Header */
-header {
-  background: #000;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  <section class="hero">
+    <h2>Roblox Developer & Builder</h2>
+    <p>Crafting immersive experiences and scripts for the Roblox community.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
 
-header .brand {
-  display: flex;
-  align-items: center;
-}
+  <section id="projects" class="grid"></section>
 
-header .avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin-right: 10px;
-  border: 2px solid red;
-}
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I specialize in scripting, building, and managing Roblox projects.</p>
+  </section>
 
-header .name {
-  font-size: 24px;
-  font-weight: bold;
-  color: red;
-}
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+  </section>
 
-nav a {
-  color: #fff;
-  margin: 0 10px;
-  text-decoration: none;
-}
+  <footer>
+    <p>© 2026 Zharif Portfolio</p>
+  </footer>
 
-nav .btn {
-  background: red;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 4px;
-}
-
-/* Sections */
-section {
-  padding: 40px;
-}
-
-.container {
-  max-width: 900px;
-  margin: auto;
-}
-
-/* Prices */
-.prices-list {
-  list-style: none;
-  padding: 0;
-}
-
-.prices-list li {
-  background: #111;
-  margin: 8px 0;
-  padding: 10px;
-  border-left: 4px solid red;
-}
-
-/* Portfolio */
-.tabs {
-  margin-bottom: 20px;
-}
-
-.tab-btn {
-  background: #222;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  margin-right: 8px;
-  cursor: pointer;
-}
-
-.tab-btn.active {
-  background: red;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.thumb {
-  width: 200px;
-  text-align: center;
-}
-
-.thumb img {
-  width: 100%;
-  border: 2px solid red;
-  border-radius: 4px;
-}
-
-.label {
-  margin-top: 6px;
-  color: red;
-}
-
-/* Contact */
-.contact-row {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.icon-link, .ticket-btn {
-  background: #111;
-  color: #fff;
-  padding: 10px 14px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.icon-link:hover, .ticket-btn:hover {
-  background: red;
-}
-
-/* Lightbox */
-.lb {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-}
-
-.lb.show {
-  display: flex;
-}
-
-.lb img {
-  max-width: 80%;
-  max-height: 80%;
-  border: 3px solid red;
-}
-
-.lb .close,
-.lb .arrow {
-  position: absolute;
-  color: #fff;
-  font-size: 2rem;
-  cursor: pointer;
-}
-
-.lb .close {
-  top: 20px;
-  right: 30px;
-}
-
-.lb .arrow.left {
-  left: 30px;
-}
-
-.lb .arrow.right {
-  right: 30px;
-}
+  <script src="imageCategories.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
