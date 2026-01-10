@@ -114,9 +114,9 @@ section h2 {
   border:1px solid #444;
   text-align:center;
 }
-.price-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+.price-stack {
+  display:flex;
+  flex-direction:column;
   gap:16px;
   margin-top:12px;
 }
