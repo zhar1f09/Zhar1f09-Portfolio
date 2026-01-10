@@ -1,9 +1,11 @@
+// Portfolio categories and their images (lowercase folder names)
 const portfolio = {
   "modeling": [
-    "model1.png",
-    "model2.png",
-    "model3.png",
-    "model4.png"
+    "modeling1.png",
+    "modeling2.png",
+    "modeling3.png",
+    "modeling4.png",
+    "modeling5.png"
   ],
   "building": [
     "building1.png",
@@ -14,9 +16,10 @@ const portfolio = {
   "clothing": [
     "clothing1.png",
     "clothing2.png",
-    "clothing3.png"
+    "clothing3.png",
+    "clothing4.png"
   ],
-  "discord Service": [
+  "discord service": [
     "discord1.png",
     "discord2.png",
     "discord3.png"
@@ -24,6 +27,7 @@ const portfolio = {
   "graphics": [
     "graphics1.png",
     "graphics2.png",
-    "graphics3.png"
+    "graphics3.png",
+    "graphics4.png"
   ]
 };
