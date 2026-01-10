@@ -3,78 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zhar1f09 | Roblox Developer</title>
+  <title>Zharif Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <!-- Header -->
-  <header id="siteHeader">
-    <div class="brand">
-      <img class="avatar" id="avatar" src="Images/profile.png" alt="Profile picture of Zhar1f09">
-      <p class="name">Zhar1f09</p>
-    </div>
+  <header>
     <nav>
-      <a href="#about">About</a>
-      <a href="#prices">Prices</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
-      <a class="btn" href="https://discord.com/users/103916006189352294" target="_blank">Hire Me</a>
+      <h1 class="logo">Zharif</h1>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </nav>
   </header>
 
-  <!-- About -->
-  <section id="about" class="container">
+  <section class="hero">
+    <h2>Roblox Developer & Builder</h2>
+    <p>Crafting immersive experiences and scripts for the Roblox community.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </section>
+
+  <section id="projects" class="grid"></section>
+
+  <section id="about">
     <h2>About Me</h2>
-    <p>I specialize in Roblox modeling, building, clothing design, and server systems. My focus is professional polish, scalable structure, and clean user experience.</p>
+    <p>I specialize in scripting, building, and managing Roblox projects.</p>
   </section>
 
-  <!-- Prices -->
-  <section id="prices" class="container">
-    <h2>Prices</h2>
-    <ul class="prices-list">
-      <li>Modeling — from $10</li>
-      <li>Building — from $15</li>
-      <li>Clothing — from $5</li>
-      <li>Server systems — from $20</li>
-    </ul>
-  </section>
-
-  <!-- Portfolio -->
-  <section id="portfolio" class="container">
-    <h2>Portfolio</h2>
-    <div class="tabs" id="tabs"></div>
-    <div class="grid" id="grid"></div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container">
+  <section id="contact">
     <h2>Contact</h2>
-    <div class="contact-row">
-      <!-- Discord -->
-      <a class="icon-link" href="https://discord.com/users/103916006189352294" target="_blank" aria-label="Discord">
-        <!-- Discord SVG here -->
-        Discord
-      </a>
-      <!-- Ticket -->
-      <a class="ticket-btn" href="https://discord.gg/Hghmu67jwU" target="_blank">Create a Ticket</a>
-      <!-- Roblox -->
-      <a class="icon-link" href="https://www.roblox.com/users/YOUR_ID/profile" target="_blank" aria-label="Roblox">
-        <!-- Roblox SVG here -->
-        Roblox
-      </a>
-    </div>
+    <p>Email: your@email.com</p>
   </section>
 
-  <!-- Lightbox -->
-  <div class="lb" id="lb">
-    <span class="close" id="lbclose">×</span>
-    <span class="arrow left" id="lbleft">‹</span>
-    <img id="lbimg" alt="Preview">
-    <span class="arrow right" id="lbright">›</span>
-  </div>
+  <footer>
+    <p>© 2026 Zharif Portfolio</p>
+  </footer>
 
-  <!-- Scripts -->
   <script src="imageCategories.js"></script>
   <script src="script.js"></script>
 </body>
