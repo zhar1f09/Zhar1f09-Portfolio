@@ -8,8 +8,7 @@
 <body>
 <header id="siteHeader">
   <div class="header-center">
-    <img class="avatar" src="Images/profile.png" alt="Profile picture">
-    <p class="name">Zharif</p>
+    <h1 class="site-name">Zhar1f09</h1>
     <nav>
       <a href="#about">About</a>
       <a href="#prices">Prices</a>
@@ -20,18 +19,13 @@
   </div>
 </header>
 
-<!-- Profile section -->
-<section id="profile">
-  <div class="container profile-center">
-    <img class="profile-img" src="Images/profile.png" alt="Profile picture">
-    <h1>Zharif</h1>
-    <p id="timezone"></p>
-    <p id="visitorCount"></p>
-  </div>
-</section>
+<!-- Profile bar with time + visits -->
+<div id="profile-bar">
+  <span id="time"></span> | <span id="visits"></span>
+</div>
 
 <section id="about">
-  <div class="container">
+  <div class="container about-center">
     <h2>About Me</h2>
     <p>I specialize in Roblox modeling, building, clothing design, and server systems. My focus is professional polish, scalable structure, and clean user experience.</p>
   </div>
@@ -78,7 +72,7 @@
 
 <script src="imageCategories.js"></script>
 <script>
-// Portfolio tabs
+// Portfolio tabs (unchanged)
 const tabs=document.getElementById('tabs');
 const grid=document.getElementById('grid');
 const categories=Object.keys(portfolio);
@@ -131,14 +125,21 @@ lbleft.addEventListener('click', () => {
   lbimg.src = `Images/${currentCategory}/${files[currentIndex]}`;
 });
 
-// Timezone (Singapore)
-document.getElementById('timezone').textContent = "Timezone: Singapore Standard Time (UTC+8)";
+// Singapore time clock
+function updateTime(){
+  const now = new Date();
+  const options = { timeZone: 'Asia/Singapore', hour12:false };
+  const sgTime = now.toLocaleTimeString('en-GB', options);
+  document.getElementById('time').textContent = sgTime;
+}
+setInterval(updateTime, 1000);
+updateTime();
 
-// Visitor counter (simple localStorage demo)
+// Visitor counter (localStorage demo)
 let visits = localStorage.getItem('visits') || 0;
 visits++;
 localStorage.setItem('visits', visits);
-document.getElementById('visitorCount').textContent = "Visitors: " + visits;
+document.getElementById('visits').textContent = "Visits: " + visits;
 </script>
 </body>
 </html>
